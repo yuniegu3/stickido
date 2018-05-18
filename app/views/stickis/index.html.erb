@@ -1,0 +1,17 @@
+<h1> Sticki Index Page </h1>
+
+<p><a href="/stickis/new">Create Sticki</a></p>
+
+<div id="my-stickis">
+    <% @stickis.each do |sticki| %>
+      <%= render sticki %>
+    <% end %>
+</div>
+<br>
+
+
+<%= link_to 'New Sticki', new_sticki_path, remote: true, id: "ajaxcall" %>
+
+<div id="sticki-form" style="display:none;"></div>
+
+
