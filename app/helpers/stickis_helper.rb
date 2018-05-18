@@ -1,0 +1,2 @@
+module StickisHelper
+end
