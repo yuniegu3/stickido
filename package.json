@@ -1,5 +1,8 @@
 {
   "name": "stickido",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "npm": "^6.0.1"
+  }
 }
