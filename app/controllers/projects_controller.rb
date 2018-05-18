@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
 # projects GET  /projects(.:format)   projects#index
 	def index
-		@projects = Project.all 
+		@projects = Project.all
 	end
 
 # project GET  /projects/:id(.:format)   projects#show
@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
 
 # new_project GET  /projects/new(.:format)  projects#new
 	def new
-		Project.new
+		@project = Project.new
 	end
 
 # POST   /projects(.:format)  projects#create
