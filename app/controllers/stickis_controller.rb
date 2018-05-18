@@ -13,13 +13,14 @@ class StickisController < ApplicationController
 
 #  new_sticki GET    /stickis/new(.:format) stickis#new
 	def new
-		Sticki.new
+		@sticki = Sticki.new
 	end
 
 #             POST   /stickis(.:format) stickis#create
 	def create
 		Sticki.create(sticki_params)
-		redirect_to '/projects/:project_id/tasks'
+		redirect_to '/stickis'
+		#redirect_to '/projects/:project_id/tasks'
 		# this should go back to the tasks page right? Cuz stickis will be shown there(on desktop view)
 		# find out how to redirect to /stickis if mobile view.
 	end
@@ -34,7 +35,8 @@ class StickisController < ApplicationController
 	def update
 		@sticki = Sticki.find(params[:id])
         @sticki.update(sticki_params)
-		redirect_to '/projects/:project_id/tasks'
+        redirect_to '/stickis'
+		#redirect_to '/projects/:project_id/tasks'
 		# this should go back to the tasks page right? Cuz stickis will be shown there(on desktop view)
 		# find out how to redirect to /stickis if mobile view.
 	end
@@ -42,7 +44,8 @@ class StickisController < ApplicationController
 #             DELETE /stickis/:id(.:format) stickis#destroy
 	def destroy
 		Sticki.find(params[:id]).destroy
-		redirect_to '/projects/:project_id/tasks'
+		redirect_to '/stickis'
+		#redirect_to '/projects/:project_id/tasks'
 		# this should go back to the tasks page right? Cuz stickis will be shown there(on desktop view)
 		# find out how to redirect to /stickis if mobile view.
 	end

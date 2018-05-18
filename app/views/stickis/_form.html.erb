@@ -1,0 +1,7 @@
+<%= form_for @sticki, remote: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :sticki_name %>
+    <%= f.label :content %>
+    <%= f.text_field :content, id: :sticki_content %>
+    <%= f.submit %>
+<% end %>
