@@ -2,5 +2,5 @@
 <p><%= sticki.name %></p>
 <p><%= sticki.content %></p>
 <p><%= link_to 'Edit', edit_sticki_path(sticki), remote:true %></p>
-<p><%= link_to 'Destroy', sticki_path(sticki), method: :delete, remote:true, data: { confirm: 'Are you sure you want to delete #{sticki.name}?' } %></p>
+<p><%= link_to 'Destroy', sticki_path(sticki), method: :delete, remote:true, data: { confirm: "Are you sure you want to delete '#{sticki.name}'?" } %></p>
 </div>
