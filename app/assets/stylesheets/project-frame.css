@@ -1,0 +1,178 @@
+
+/* media queries via responsivedesign.is */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
+    border: dotted orange 10px;
+    background-color: purple;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  body {
+    border: dotted yellow 10px;
+    background-color: blue;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+    body {
+        border: dotted green 10px;
+        background-color: purple;
+      }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+/**********
+    iPad 3
+    **********/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-devicbody {
+    border: dotted orange 10px;
+    background-color: purple;
+  }/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        border: dotted orange 10px;
+        background-color: purple;
+      }
+}
