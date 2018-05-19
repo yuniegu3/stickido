@@ -14,11 +14,7 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-<<<<<<< HEAD
-# Use Bulma for styling
-=======
 # Use Bootstrap for styling
->>>>>>> a0b2f35db02b5a84a9efbe5ba0a7a1e4cc00c4dd
 gem 'bootstrap'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
