@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stickido</title>
+    <title><%= @project != nil ? 'sticki ' + @project[:name] : 'untitled sticki'%></title>
     <%= csrf_meta_tags %>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <%if !flash[:notice].blank?%>
+      <div id="masterFlashNotice">
+        <%= flash[:noticee]%>
+      </div>
+    <%end%>
+    <div> view controls </div>
     <%= yield %>
      <script
   src="https://code.jquery.com/jquery-3.3.1.min.js">
