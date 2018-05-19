@@ -14,9 +14,4 @@
  *= require_self
  */
 
-@import "bulma";
-
-.has-bg-img {
-  background: asset-url('stickido.jpg') center center;
-  background-size: cover;
-}
+@import "bootstrap";
