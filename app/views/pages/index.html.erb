@@ -1,17 +1,33 @@
-<div id="pageFrame">
-    <div id="stickisFrame">
-        <div id="stikisContent">
-            sticki content
+<div id="screenFrame">
+    <header>  header content
+        <div id="viewControlFrame"> view controls </div>
+    </header>
+    <div id="pageFrame">
+        <div id="stickiFrame">
+        </div>
+        <div id="listFrame">
+            <div id="listFrameInnerWrap">
+            <%#place-holders for list wraps%>
+            <%10.times do |num|%>
+                <div class="listWrap">
+                    list                    
+                </div> 
+            <%end%>
+           </div>
         </div>
     </div>
-    <div id="listFrame">
-        <div id="listContent">
-            list content
-        </div>
-    </div>
+   
     <div id="timelineFrame">
         <div id="timelineContent">
-            timeline content
+            <%#place holder for time logic/ place in helper file%>
+                <%@time = Time.new.day%>
+                    <%@days = @time + 90%>
+                    <%while @time < @days%>
+                        <span class="timeDash">
+                            <%=@time%>• 
+                        </span>
+                        <%@time += 1%>
+                    <%end%>
         </div>
     </div>
-</div>
+    </div>
