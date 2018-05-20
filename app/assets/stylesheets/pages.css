@@ -1,0 +1,16 @@
+body {
+  background-color: blue;
+  height: 100vh;
+  width: 100vw;
+}
+
+#masterFlashHash {
+  position: absolute;
+  top: 0px;
+  background-color: white;
+  color: magenta;
+}
+
+#pink {
+  color: pink;
+}

@@ -1,0 +1,159 @@
+<div id="screenFrame">
+    <header>  
+        <h5>header</h5>
+        <div id="viewControlFrame"> 
+            view option buttons:
+            <button id="columnToggle" class="viewSelector">||</button>
+            <button id="rowToggle"  class="viewSelector">=</button>
+        </div>
+        
+    </header>
+    <div id="pageFrame" class="columnFrame">
+        <div id="stickiFrame" class="columnItem">
+            <div id="stickiFrameInnerWrap" class"rowInnerItem innerItem">
+            <%# ******************************************* start of placehodler code that can be deleted %>
+            Stickies:
+                <%#some random sticki place-holders:%>
+                <%@top = 50%>
+                <%@left = 20%>
+                <%10.times do |num|%>
+                    <div class="stickiWrap" style="top:<%=50 + rand(50)%>px; left:<%=@left%>px">
+                        click to make a sticki
+                        and drag it
+                    </div>
+                    <div class="stickiWrap" style="top:<%=200 + rand(50)%>px; left:<%=@left%>px">
+                        click to make a sticki
+                        and drag it
+                    </div>
+                    <div class="stickiWrap" style="top:<%=350 + rand(50)%>px; left:<%=@left%>px">
+                        click to make a sticki
+                        and drag it
+                    </div>
+                    <%@top += 10%>
+                    <%@left += 200%>
+                    <%if @top == 40 then @top = 10 end%>
+                    <%if @left == 3000 then @left = 100 end%>
+                <%end%>
+                <%# ******************************************* end of placehodler code that can be deleted %>
+            
+            </div>
+        </div>
+       
+        <div id="listFrame" class="columnItem">
+            <div id="listFrameInnerWrap">
+            <%# ******************************************* start of placehodler code that can be deleted %>
+            <%# use the class "listWrap" when adding new lists here.  Has overflow scroll %>
+            LISTS:
+            <%#place-holders for list wraps%>
+            
+            <%10.times do |num|%>
+                <div class="listWrap">
+                LIST:
+                <ol>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+              </ol>                  
+                </div> 
+            <%end%>
+            <%# ******************************************* finish of placehodler code that can be deleted %>
+           </div>
+        </div>
+    </div>
+   
+    <div id="timelineFrame">
+        <div id="timelineContent">
+        <%# ******************************************* start of placehodler code that can be deleted %>
+                <%@time = Time.new.day%>
+                    <%@days = @time + 90%>
+                    <%while @time < @days%>
+                        <span class="timeDash">
+                            <%=@time%>• 
+                        </span>
+                        <%@time += 1%>
+                    <%end%>
+        <%# ******************************************* finish of placehodler code that can be deleted %>
+        </div>
+    </div>
+    </div>
