@@ -1,4 +1,12 @@
 /* Small devices (landscape phones, 576px and up) */
+.stickiWrap {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+  border: solid yellow 1px;
+}
+
 #viewControlFrame {
   height: 1rem;
 }
@@ -23,24 +31,38 @@
   border: solid blue 3px;
   background: rgb(230, 230, 159);
   max-height: 50%;
+  overflow-x: scroll;
 }
 #listFrame {
   border: solid red 3px;
   max-height: 50%;
   display: inline;
-  overflow: scroll;
+  overflow-x: scroll;
 }
-#listFrameInnerWrap {
+#stickiFrameInnerWrap {
+  position: relative;
+  height: 50vh; /* change this to be proportional  */
   background-color: teal;
   width: 3000px;
-  height: 400px;
-  display: flex;
+  overflow-x: scroll;
 }
+
+#listFrameInnerWrap {
+  width: 3000px; /* make this width grow on user clicks  */
+  height: 50vh; /* change this to be proportional  */
+  display: flex;
+  background-color: gray;
+}
+
 .listWrap {
   border: solid pink 2px;
   float: left;
   width: 20vw;
+  min-width: 150px;
+  max-width: 400px;
   height: 200px;
+  margin-left: 20px;
+  overflow-y: scroll;
 }
 .timeDash {
   color: pink;
@@ -76,6 +98,9 @@
   }
   #timelineContent {
     width: 2rem;
+  }
+  #pageFrame {
+    margin-left: 2rem;
   }
 }
 
