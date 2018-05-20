@@ -4,6 +4,20 @@
     </header>
     <div id="pageFrame">
         <div id="stickiFrame">
+            <div id="stickiFrameInnerWrap">
+                <%#add some random sticki place-holders:%>
+                <%@top = 50%>
+                <%@left = 20%>
+                <%10.times do |num|%>
+                    <div class="stickiWrap" style="top:<%=1 + rand(30)%>px; left:<%=@left%>px">sticki</div>
+                    <%@top += 10%>
+                    <%@left += 200%>
+                    <%if @top == 40 then @top = 10 end%>
+                    <%if @left == 3000 then @left = 100 end%>
+                <%end%>
+            
+            
+            </div>
         </div>
         <div id="listFrame">
             <div id="listFrameInnerWrap">
