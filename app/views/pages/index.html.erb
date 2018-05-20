@@ -5,11 +5,22 @@
     <div id="pageFrame">
         <div id="stickiFrame">
             <div id="stickiFrameInnerWrap">
-                <%#add some random sticki place-holders:%>
+                <%#some random sticki place-holders:%>
                 <%@top = 50%>
                 <%@left = 20%>
                 <%10.times do |num|%>
-                    <div class="stickiWrap" style="top:<%=1 + rand(30)%>px; left:<%=@left%>px">sticki</div>
+                    <div class="stickiWrap" style="top:<%=50 + rand(50)%>px; left:<%=@left%>px">
+                        click to make a sticki
+                        and drag it
+                    </div>
+                    <div class="stickiWrap" style="top:<%=200 + rand(50)%>px; left:<%=@left%>px">
+                        click to make a sticki
+                        and drag it
+                    </div>
+                    <div class="stickiWrap" style="top:<%=350 + rand(50)%>px; left:<%=@left%>px">
+                        click to make a sticki
+                        and drag it
+                    </div>
                     <%@top += 10%>
                     <%@left += 200%>
                     <%if @top == 40 then @top = 10 end%>
