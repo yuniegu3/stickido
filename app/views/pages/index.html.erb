@@ -1,15 +1,17 @@
 <div id="screenFrame">
-    <header>  header content
+    <header>  
+        <h5>header</h5>
         <div id="viewControlFrame"> 
-            <div id="viewOne" class="viewSelector">|||</div>
-            <div id="viewTwo"  class="viewSelector"> E </div>
-            <div id="viewThree"  class="viewSelector">|||</div>
-            <div id="viewFour"  class="viewSelector">|||</div>
+            view option buttons:
+            <button id="columnToggle" class="viewSelector">||</button>
+            <button id="rowToggle"  class="viewSelector">=</button>
         </div>
+        
     </header>
-    <div id="pageFrame">
-        <div id="stickiFrame">
+    <div id="pageFrame" class="columnFrame">
+        <div id="stickiFrame" class="first">
             <div id="stickiFrameInnerWrap">
+            Stickies:
                 <%#some random sticki place-holders:%>
                 <%@top = 50%>
                 <%@left = 20%>
@@ -35,12 +37,58 @@
             
             </div>
         </div>
-        <div id="listFrame">
+       
+        <div id="listFrame" class="second ">
             <div id="listFrameInnerWrap">
+            LISTS:
             <%#place-holders for list wraps%>
             <%10.times do |num|%>
                 <div class="listWrap">
-                    list                    
+                LIST:
+                <ol>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+                <li>One</li>
+                <li>Two</li>
+                <ol>
+                  <li>Inner One</li>
+                  <li>inner Two</li>
+                </ol>
+                <li>Three</li>
+              </ol>                  
                 </div> 
             <%end%>
            </div>
@@ -49,6 +97,7 @@
    
     <div id="timelineFrame">
         <div id="timelineContent">
+        
             <%#place holder for time logic/ place in helper file%>
                 <%@time = Time.new.day%>
                     <%@days = @time + 90%>

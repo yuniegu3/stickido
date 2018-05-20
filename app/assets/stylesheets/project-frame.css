@@ -1,11 +1,25 @@
+body {
+  padding-top: 3rem;
+}
+
 header {
-  height: 5rem;
+  width: 100vw;
+  height: 3rem;
+  position: fixed;
+  top: 0px;
+  background-color: gainsboro;
+  z-index: 2;
+}
+header h5 {
+  float: left;
+  margin-left: 3rem;
 }
 
 #viewControlFrame {
   height: 2rem;
   border: solid blue 1px;
-  width: 30vw;
+  float: right;
+  margin-right: 2rem;
   display: flex;
 }
 
@@ -15,9 +29,7 @@ header {
 
 .stickiWrap {
   position: absolute;
-
   width: 100px;
-  height: 100px;
   border: solid yellow 1px;
 }
 
@@ -31,9 +43,10 @@ header {
   width: 100%;
   border: dotted orange 5px;
   display: flex;
-  flex-direction: column;
+
   z-index: 5;
 }
+
 #stickiFrame,
 #listFrame {
   flex-grow: 1;
@@ -47,23 +60,27 @@ header {
 }
 #listFrame {
   border: solid red 3px;
-  max-height: 50%;
+
   display: inline;
   overflow-x: scroll;
 }
 #stickiFrameInnerWrap {
   position: relative;
-  height: 50vh; /* change this to be proportional  */
+  /* height: 100%; change this to be proportional  */
+  flex-grow: 1;
   background-color: teal;
   width: 3000px;
   height: 100vh;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 #listFrameInnerWrap {
   width: 3000px; /* make this width grow on user clicks  */
-  height: 50vh; /* change this to be proportional  */
+  /* height: 48vh; change this to be proportional  */
+  flex-grow: 1;
   display: flex;
+  overflow: hidden;
   background-color: gray;
 }
 
@@ -73,7 +90,6 @@ header {
   width: 20vw;
   min-width: 150px;
   max-width: 400px;
-  height: 200px;
   margin-left: 20px;
   overflow-y: scroll;
 }
@@ -94,17 +110,48 @@ header {
   bottom: 0px;
   background-color: greenyellow;
   overflow-y: scroll;
-  height: 2rem;
+  height: 3rem;
   width: 100vw;
+  z-index: 100;
 }
 #timelineContent {
   width: 3000px;
+  padding-top: 0.5rem;
 }
 ::-webkit-scrollbar {
   height: 0px;
   width: 0px;
 }
-@media all and (max-width: 575px) {
+
+/* at very small screen size, the
+sticki-frame and the list-frame
+are the same height as the screen.
+you can scroll to see the bottom one
+or click to change which is on top */
+@media all and (max-width: 600px) {
+  #pageFrame {
+    height: 180vh;
+  }
+  #listFrameInnerWrap {
+    height: 90vh;
+  }
+}
+
+@media all and (max-width: 600px) {
+  #timelineFrame {
+    height: 100vh;
+    width: 1.5rem;
+    font-size: smaller;
+  }
+  #timelineContent {
+    width: 2rem;
+  }
+  #pageFrame {
+    margin-left: 1rem;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 850px) {
   #timelineFrame {
     height: 100vh;
     width: 2rem;
@@ -112,6 +159,7 @@ header {
   #timelineContent {
     width: 2rem;
   }
+
   #pageFrame {
     margin-left: 2rem;
   }
@@ -145,4 +193,28 @@ header {
   body {
     background-color: pink;
   }
+}
+
+/* view options being changed via js:  
+/* two options for pageFrame: */
+.columnFrame {
+  flex-direction: column;
+}
+.rowFrame {
+  flex-direction: row;
+}
+/* the stickiFrame and listFrame have to adjust their height based on if the parent frame is a column or a row: */
+.rowItem {
+  height: 100vh;
+}
+.columnItem {
+  /* max-height: 50%; */
+}
+/* toggle the order that the stickiFrame and listFrame appear in: */
+
+.first {
+  order: 1;
+}
+.second {
+  order: 2;
 }
