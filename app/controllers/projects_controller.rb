@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
 # project GET  /projects/:id(.:format)   projects#show
 	def show
 		@project = Project.find(params[:id])
+		@works = @project.tasks 
+
 	end
 
 # new_project GET  /projects/new(.:format)  projects#new
