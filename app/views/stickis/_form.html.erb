@@ -1,7 +1,5 @@
-<%= form_for @sticki, remote: true do |f| %>
-    <%= f.label :name %>
+<%= bootstrap_form_for @sticki, remote: true do |f| %>
     <%= f.text_field :name, id: :sticki_name %>
-    <%= f.label :content %>
-    <%= f.text_field :content, id: :sticki_content %>
+    <%= f.text_field :content, id: :sticki_content, required: true %>
     <%= f.submit %>
 <% end %>
