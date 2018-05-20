@@ -11,6 +11,7 @@
     <div id="pageFrame" class="columnFrame">
         <div id="stickiFrame" class="columnItem">
             <div id="stickiFrameInnerWrap" class"rowInnerItem innerItem">
+            <%# ******************************************* start of placehodler code that can be deleted %>
             Stickies:
                 <%#some random sticki place-holders:%>
                 <%@top = 50%>
@@ -33,15 +34,18 @@
                     <%if @top == 40 then @top = 10 end%>
                     <%if @left == 3000 then @left = 100 end%>
                 <%end%>
-            
+                <%# ******************************************* end of placehodler code that can be deleted %>
             
             </div>
         </div>
        
         <div id="listFrame" class="columnItem">
             <div id="listFrameInnerWrap">
+            <%# ******************************************* start of placehodler code that can be deleted %>
+            <%# use the class "listWrap" when adding new lists here.  Has overflow scroll %>
             LISTS:
             <%#place-holders for list wraps%>
+            
             <%10.times do |num|%>
                 <div class="listWrap">
                 LIST:
@@ -133,14 +137,14 @@
               </ol>                  
                 </div> 
             <%end%>
+            <%# ******************************************* finish of placehodler code that can be deleted %>
            </div>
         </div>
     </div>
    
     <div id="timelineFrame">
         <div id="timelineContent">
-        
-            <%#place holder for time logic/ place in helper file%>
+        <%# ******************************************* start of placehodler code that can be deleted %>
                 <%@time = Time.new.day%>
                     <%@days = @time + 90%>
                     <%while @time < @days%>
@@ -149,6 +153,7 @@
                         </span>
                         <%@time += 1%>
                     <%end%>
+        <%# ******************************************* finish of placehodler code that can be deleted %>
         </div>
     </div>
     </div>
