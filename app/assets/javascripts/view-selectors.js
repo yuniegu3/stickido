@@ -8,23 +8,28 @@ if (viewControlFrame) {
     const { target } = e;
     if (!target.classList.contains('viewSelector')) return null;
     const viewOption = target.id;
-    console.log(viewOption);
-    const pageFrame = document.getElementById('pageFrame');
-    const stickiFrame = document.getElementById('stickiFrame');
-    const listFrame = document.getElementById('listFrame');
-    if (viewOption === 'rowToggle') {
-      pageFrame.classList.add('columnFrame');
-      pageFrame.classList.remove('rowFrame');
-    } else if (viewOption === 'columnToggle') {
-      pageFrame.classList.add('rowFrame');
-      pageFrame.classList.remove('columnFrame');
-      stickiFrame.classList.add('rowItem');
-      listFrame.classList.add('rowItem');
+    const container = document.getElementById('pageFrame');
+    const items = document.getElementsByClassName('pageFrame');
+    if (viewOption === 'columnToggle') {
+      console.log('columnToggle');
+      if (container.classList.contains('columnFrame')) {
+        container.classList.toggle('columnFrameReverse');
+      } else {
+        container.classList.remove('rowFrame');
+        container.classList.remove('rowFrameReverse');
+        container.classList.add('columnFrame');
+      }
+    } else if (viewOption === 'rowToggle') {
+      console.log('rowToggle');
+      if (container.classList.contains('rowFrame')) {
+        container.classList.toggle('rowFrameReverse');
+      } else {
+        container.classList.remove('columnFrame');
+        container.classList.remove('columnFrameReverse');
+        container.classList.add('rowFrame');
+      }
+    } else {
+      console.log(`unexpected viewOption: ${viewOption}`);
     }
-    // and always do this:
-    stickiFrame.classList.toggle('first');
-    stickiFrame.classList.toggle('second');
-    listFrame.classList.toggle('first');
-    listFrame.classList.toggle('second');
   });
 }

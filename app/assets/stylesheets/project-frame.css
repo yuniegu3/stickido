@@ -191,7 +191,7 @@ or click to change which is on top */
 /* ***************************************************** */
 /* CLASSES FOR THE COLUMN VIEW: */
 .columnFrame {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 .columnFrameReverse {
   flex-direction: row-reverse;
@@ -199,24 +199,3 @@ or click to change which is on top */
 .columnItem {
   height: 100vh;
 }
-
-/* CLASSES FOR THE ORDER OF THE ITEMS */
-
-/* .columnFrame {
-  flex-direction: column;
-}
-.rowFrame {
-  flex-direction: row;
-}
-
-.rowItem {
-  height: 100vh;
-} */
-/* flex-grow: 1; */
-/* .columnItem {
-  flex-grow: 1;
-}
-.innerColumnItem {
-  max-height: 48vh;
-} */
-/* toggle the order that the stickiFrame and listFrame appear in: */
