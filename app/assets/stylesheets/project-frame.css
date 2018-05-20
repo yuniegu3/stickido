@@ -1,0 +1,192 @@
+/* SCREEN FRAME */
+#screenFrame {
+  height: 100vh;
+  width: 100vw;
+  /* padding making up for the size of the header */
+  padding-top: 3rem;
+}
+
+/* make the scrollbars invisible, so we can customize */
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+/* HEADER FRAME */
+header {
+  width: 100vw;
+  height: 3rem;
+  position: fixed;
+  top: 0px;
+  background-color: gainsboro;
+  z-index: 2;
+}
+header h5 {
+  float: left;
+  margin-left: 3rem;
+}
+
+#viewControlFrame {
+  height: 2rem;
+  border: solid blue 1px;
+  float: right;
+  margin-right: 2rem;
+  display: flex;
+}
+
+.viewSelector {
+  padding: 0.5rem;
+}
+
+/* PAGE FRAME (contains the stickiFrame and the listFrame */
+
+#pageFrame {
+  height: 100%;
+  width: 100%;
+  /* border: dotted orange 5px; */
+  display: flex;
+  z-index: 5;
+}
+
+/* STICKI FRAME: */
+
+#stickiFrame {
+  border: solid blue 3px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+#stickiFrameInnerWrap {
+  position: relative;
+  background-color: teal;
+  width: 3000px;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#stickiFrameInnerWrap {
+  position: relative;
+  background-color: teal;
+  width: 3000px;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.stickiWrap {
+  position: absolute;
+  width: 100px;
+  border: solid yellow 1px;
+}
+
+/* LIST FRAME */
+
+#listFrame {
+  display: inline;
+  overflow-x: scroll;
+}
+
+#listFrameInnerWrap {
+  width: 3000px; /* make this width grow on user clicks  */
+  display: flex;
+  background-color: gray;
+  border: dotted orange 3px;
+  height: 100%; /*limit height to preserve scroll*/
+}
+
+.listWrap {
+  float: left;
+  width: 20vw;
+  min-width: 150px;
+  max-width: 400px;
+  margin-left: 20px;
+  border: dotted aqua 1px;
+  color: white;
+  overflow-y: scroll;
+}
+
+/* TIMELINE FRAME */
+
+#timelineFrame {
+  border: orange dotted 3px;
+  position: fixed;
+  bottom: 0px;
+  background-color: greenyellow;
+  overflow-y: scroll;
+  height: 3rem;
+  width: 100vw;
+  z-index: 100;
+}
+
+#timelineContent {
+  width: 3000px;
+  padding-top: 0.5rem;
+}
+.timeDash {
+  color: pink;
+}
+
+/* at very small screen size, the
+sticki-frame and the list-frame
+are the same height as the screen.
+you can scroll to see the bottom one
+or click to change which is on top */
+@media all and (max-width: 600px) {
+  #pageFrame {
+    height: 180vh;
+  }
+  #listFrameInnerWrap {
+    height: 90vh;
+  }
+}
+
+@media all and (max-width: 600px) {
+  #timelineFrame {
+    height: 100vh;
+    width: 1.5rem;
+    font-size: smaller;
+  }
+  #timelineContent {
+    width: 2rem;
+  }
+  #pageFrame {
+    margin-left: 1rem;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 850px) {
+  #timelineFrame {
+    height: 100vh;
+    width: 2rem;
+  }
+  #timelineContent {
+    width: 2rem;
+  }
+  #pageFrame {
+    margin-left: 2rem;
+  }
+}
+/* WORKING HERE */
+/* Medium devices (tablets, 768px and up) */
+
+/* CLASSES CHANGED IN JS TO CHANGE THE VIEW OPTION: */
+/* CLASSES FOR THE ROW VIEW: */
+.rowFrame {
+  flex-direction: column;
+}
+.rowFrameReverse {
+  flex-direction: column-reverse;
+}
+.rowItem {
+  height: 100%;
+}
+/* CLASSES FOR THE COLUMN VIEW: */
+.columnFrame {
+  flex-direction: row;
+}
+.columnFrameReverse {
+  flex-direction: row-reverse;
+}
+.columnItem {
+  height: 100vh;
+}
