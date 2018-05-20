@@ -1,0 +1,15 @@
+<h1> Tasks Index Page </h1>
+<%# hard coded to project 1 for now %>
+<p><a href="projects/1/tasks/new">Create Task</a></p>
+
+<div id="my-tasks">
+    <% @tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+</div>
+<br>
+
+
+<%= link_to 'New Task', new_project_task, remote: true, id: "ajaxcall" %>
+
+<div id="task-form" style="display:none;"></div>
