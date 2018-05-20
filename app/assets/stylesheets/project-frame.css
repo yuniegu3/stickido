@@ -1,5 +1,85 @@
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+#viewControlFrame {
+  height: 1rem;
+}
+#screenFrame {
+  height: 100vh;
+  width: 100vw;
+  border: solid black 3px;
+}
+#pageFrame {
+  height: 100%;
+  width: 100%;
+  border: dotted orange 5px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+#stickiFrame,
+#listFrame {
+  flex-grow: 1;
+}
+#stickiFrame {
+  border: solid blue 3px;
+  background: rgb(230, 230, 159);
+  max-height: 50%;
+}
+#listFrame {
+  border: solid red 3px;
+  max-height: 50%;
+  display: inline;
+  overflow: scroll;
+}
+#listFrameInnerWrap {
+  background-color: teal;
+  width: 3000px;
+  height: 400px;
+  display: flex;
+}
+.listWrap {
+  border: solid pink 2px;
+  float: left;
+  width: 20vw;
+  height: 200px;
+}
+.timeDash {
+  color: pink;
+}
+
+.listWrap {
+  color: white;
+  /* width: 20vw;
+  border: solid aqua 1px;
+  height: 200px; */
+}
+
+#timelineFrame {
+  border: orange dotted 3px;
+  position: fixed;
+  bottom: 0px;
+  background-color: greenyellow;
+  overflow-y: scroll;
+  height: 2rem;
+  width: 100vw;
+}
+#timelineContent {
+  width: 3000px;
+}
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+@media all and (max-width: 575px) {
+  #timelineFrame {
+    height: 100vh;
+    width: 2rem;
+  }
+  #timelineContent {
+    width: 2rem;
+  }
+}
+
+@media all and (min-width: 576px) {
   body {
     background-color: orange;
     border: dotted orange 3px;
