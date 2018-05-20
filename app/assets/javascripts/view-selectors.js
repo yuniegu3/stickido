@@ -10,6 +10,8 @@ if (viewControlFrame) {
     const viewOption = target.id;
     // pageFrame is the div surrounding the stickiFrame and listFrame
     const container = document.getElementById('pageFrame');
+    // change classes of the flex-contaner and the flex-items to switch from column to row
+    // or toggle between colum and column-reverse/ row and row-reverse
     if (viewOption === 'columnToggle') {
       if (container.classList.contains('columnFrame')) {
         container.classList.toggle('columnFrameReverse');
@@ -19,7 +21,6 @@ if (viewControlFrame) {
         container.classList.add('columnFrame');
       }
     } else if (viewOption === 'rowToggle') {
-      console.log('rowToggle');
       if (container.classList.contains('rowFrame')) {
         container.classList.toggle('rowFrameReverse');
       } else {
