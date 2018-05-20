@@ -6,11 +6,52 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Project.create(name: 'test')
+require 'faker'
 
-Task.create(name: 'test task', content: 'lorem ipsum', sequence: 1, duedate: nil, project_id: 1)
-Task.create(name: 'test subtask', content: 'ipsum lorem', sequence: 2, duedate: nil, project_id: 1, task_id: 1)
+# create 3 projects
+@project = Project.create(name: 'project one', user_id: 1)
+Project.create(name: 'project two', user_id: 1)
+Project.create(name: 'project three', user_id: 1)
+@project_id = @project.id
 
-Sticki.create(name: 'test sticki', content: 'lorem ipsum ipsum lorem')
+# create 50 stickis for each project:
+@project_id = 1
+3.times do
+    50.times do
+        Sticki.create([
+            name: '',
+            content: Faker::Hipster.sentence(2),
+            project_id: @project_id
+        ])
+    end
+    @project_id += 1
+end
 
+# create Tasks for each of the three projects @project_id defined above:
+# only the @task with task_id: nil needs to have a project_id assigned:
+@starting_project_id = @project_id
+3.times do
+    5.times do 
+        @parent_id = nil
+        @task = Task.create(
+            task_id: @parent_id, 
+            content: Faker::Hipster.sentence(2),
+            project_id: @project_id
+            )
+        @parent_id = @task.id
+        5.times do 
+            @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
+            @parent_id = @task.id
+            5.times do 
+                @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
+            end
+        end
+    end
+    @project_id += 1;
+    if(@project_id > @starting_project_id + 3) 
+        @project_id -= 3
+    end
+end
+
+# create tags:
 Tag.create(name: 'tag')
