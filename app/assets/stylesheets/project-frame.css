@@ -36,12 +36,11 @@ header h5 {
 #screenFrame {
   height: 100vh;
   width: 100vw;
-  border: solid black 3px;
 }
 #pageFrame {
   height: 100%;
   width: 100%;
-  border: dotted orange 5px;
+  /* border: dotted orange 5px; */
   display: flex;
 
   z-index: 5;
@@ -49,25 +48,21 @@ header h5 {
 
 #stickiFrame,
 #listFrame {
-  flex-grow: 1;
 }
 #stickiFrame {
   border: solid blue 3px;
-  background: rgb(230, 230, 159);
-  max-height: 50%;
+  /* max-height: 50%; */
   overflow-x: scroll;
   overflow-y: scroll;
 }
 #listFrame {
-  border: solid red 3px;
-
   display: inline;
   overflow-x: scroll;
+  /* overflow-y: hidden; */
+  /* height: 100%; */
 }
 #stickiFrameInnerWrap {
   position: relative;
-  /* height: 100%; change this to be proportional  */
-  flex-grow: 1;
   background-color: teal;
   width: 3000px;
   height: 100vh;
@@ -77,31 +72,25 @@ header h5 {
 
 #listFrameInnerWrap {
   width: 3000px; /* make this width grow on user clicks  */
-  /* height: 48vh; change this to be proportional  */
-  flex-grow: 1;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: gray;
+  border: dotted orange 3px;
+  height: 100%; /*limit height to preserve scroll*/
 }
 
 .listWrap {
-  border: solid pink 2px;
   float: left;
   width: 20vw;
   min-width: 150px;
   max-width: 400px;
   margin-left: 20px;
+  border: dotted aqua 1px;
+  color: white;
   overflow-y: scroll;
 }
 .timeDash {
   color: pink;
-}
-
-.listWrap {
-  color: white;
-  /* width: 20vw;
-  border: solid aqua 1px;
-  height: 200px; */
 }
 
 #timelineFrame {
@@ -159,7 +148,6 @@ or click to change which is on top */
   #timelineContent {
     width: 2rem;
   }
-
   #pageFrame {
     margin-left: 2rem;
   }
@@ -167,12 +155,6 @@ or click to change which is on top */
 
 /* MEDIA QUERIES: */
 /* Small devices (landscape phones, 576px and up) */
-@media all and (min-width: 576px) {
-  body {
-    background-color: orange;
-    border: dotted orange 3px;
-  }
-}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -184,37 +166,57 @@ or click to change which is on top */
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   body {
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   body {
-    background-color: pink;
+    /* background-color: pink; */
   }
 }
 
-/* view options being changed via js:  
-/* two options for pageFrame: */
+/* ***************************************************** */
+/* CLASSES FOR THE ROW VIEW: */
+.rowFrame {
+  flex-direction: column;
+}
+.rowFrameReverse {
+  flex-direction: column-reverse;
+}
+.rowItem {
+  height: 100%;
+}
+/* ***************************************************** */
+/* CLASSES FOR THE COLUMN VIEW: */
 .columnFrame {
+  flex-direction: row-reverse;
+}
+.columnFrameReverse {
+  flex-direction: row-reverse;
+}
+.columnItem {
+  height: 100vh;
+}
+
+/* CLASSES FOR THE ORDER OF THE ITEMS */
+
+/* .columnFrame {
   flex-direction: column;
 }
 .rowFrame {
   flex-direction: row;
 }
-/* the stickiFrame and listFrame have to adjust their height based on if the parent frame is a column or a row: */
+
 .rowItem {
   height: 100vh;
+} */
+/* flex-grow: 1; */
+/* .columnItem {
+  flex-grow: 1;
 }
-.columnItem {
-  /* max-height: 50%; */
-}
+.innerColumnItem {
+  max-height: 48vh;
+} */
 /* toggle the order that the stickiFrame and listFrame appear in: */
-
-.first {
-  order: 1;
-}
-.second {
-  order: 2;
-}
