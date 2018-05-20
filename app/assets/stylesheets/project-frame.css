@@ -32,6 +32,7 @@
   background: rgb(230, 230, 159);
   max-height: 50%;
   overflow-x: scroll;
+  overflow-y: scroll;
 }
 #listFrame {
   border: solid red 3px;
@@ -44,6 +45,7 @@
   height: 50vh; /* change this to be proportional  */
   background-color: teal;
   width: 3000px;
+  height: 100vh;
   overflow-x: scroll;
 }
 
