@@ -30,26 +30,24 @@ class TasksController < ApplicationController
 
 # edit_project_task GET   /projects/:project_id/tasks/:id/edit(.:format) tasks#edit
 	def edit
-		@task = Task.find(params[:id])
 		@project = Project.find(params[:project_id])
+		@task = Task.find(params[:id])
 	end
 
 # PATCH  /projects/:project_id/tasks/:id(.:format)     tasks#update
 # PUT    /projects/:project_id/tasks/:id(.:format)     tasks#update
 	def update
 		@task = Task.find(params[:id])
-		@project = @task.project
         @task.update(task_params)
-        Project.find(params[:project_id])
         # im not 100% sure if this is the correct redirect route since it is a nested route..expect errors
-        redirect_to '/projects/:project_id/tasks'
+        redirect_to "/projects/#{@task.project_id}/tasks"
     end
 
 #  DELETE /projects/:project_id/tasks/:id(.:format)      tasks#destroy
 	def destroy
+		@project = Project.find(params[:project_id])
 		Task.find(params[:id]).destroy
-		Project.find(params[:project_id])
-		redirect_to '/projects/:project_id/tasks'
+		redirect_to "/projects/#{@project.id}/tasks"
 	end
 
 	private
