@@ -1,6 +1,6 @@
 
 <%# the url path seems to be right %>
-<%= bootstrap_form_for(:task, url: project_task_path, remote: true do |f| %>
+<%= bootstrap_form_for(:task, url: project_task_path) do |f| %>
     <%= f.text_field :name, id: :task_name %>
     <%= f.text_field :content, id: :task_content, required: true %>
     <%= f.number_field :sequence, id: :task_sequence %>

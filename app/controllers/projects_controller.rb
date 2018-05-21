@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
 # project GET  /projects/:id(.:format)   projects#show
 	def show
 		@project = Project.find(params[:id])
-		@works = @project.tasks 
+		@tasks = @project.tasks 
 
 	end
 
