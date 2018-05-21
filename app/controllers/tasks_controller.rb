@@ -24,7 +24,8 @@ class TasksController < ApplicationController
 		@project = Project.find(params[:project_id])
 		@task = @project.tasks.create(task_params)
 		# im not 100% sure if this is the correct redirect route since it is a nested route..expect errors
-		redirect_to '/projects'
+		# link we want to go /projects/3/tasks
+		redirect_to "/projects/#{@project.id}/tasks"
 	end
 
 # edit_project_task GET   /projects/:project_id/tasks/:id/edit(.:format) tasks#edit
