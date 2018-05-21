@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 
 # project_tasks GET   /projects/:project_id/tasks(.:format)  tasks#index
 	def index
-		@tasks = Task.all
+		@project = Project.find(params[:project_id])
+		@tasks = @project.tasks
 	end
 
 # project_task GET   /projects/:project_id/tasks/:id(.:format)  tasks#show
@@ -14,26 +15,31 @@ class TasksController < ApplicationController
 
 # new_project_task GET  /projects/:project_id/tasks/new(.:format) tasks#new
 	def new
-		Task.new
+		@project = Project.find(params[:project_id])
+ 		@task = @project.tasks.new
 	end
 
 # POST  /projects/:project_id/tasks(.:format)  tasks#create
 	def create
-		Task.create(task_params)
+		@project = Project.find(params[:project_id])
+		@task = @project.tasks.create(task_params)
 		# im not 100% sure if this is the correct redirect route since it is a nested route..expect errors
-		redirect_to '/projects/:project_id/tasks'
+		redirect_to '/projects'
 	end
 
 # edit_project_task GET   /projects/:project_id/tasks/:id/edit(.:format) tasks#edit
 	def edit
 		@task = Task.find(params[:id])
+		@project = Project.find(params[:project_id])
 	end
 
 # PATCH  /projects/:project_id/tasks/:id(.:format)     tasks#update
 # PUT    /projects/:project_id/tasks/:id(.:format)     tasks#update
 	def update
 		@task = Task.find(params[:id])
+		@project = @task.project
         @task.update(task_params)
+        Project.find(params[:project_id])
         # im not 100% sure if this is the correct redirect route since it is a nested route..expect errors
         redirect_to '/projects/:project_id/tasks'
     end
@@ -41,6 +47,7 @@ class TasksController < ApplicationController
 #  DELETE /projects/:project_id/tasks/:id(.:format)      tasks#destroy
 	def destroy
 		Task.find(params[:id]).destroy
+		Project.find(params[:project_id])
 		redirect_to '/projects/:project_id/tasks'
 	end
 

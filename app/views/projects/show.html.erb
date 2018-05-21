@@ -1,12 +1,12 @@
 <h1><%= @project.name %></h1>
 
 <div class="content">
-<p><%= @project.name %></p>
+<p>Project Name: <%= @project.name %></p>
 </div>
 
 
-<% @works.each do |task| %>
-<p><%= task.name %></p>
-<p><%= task.content %></p>
+<% @tasks.each do |task| %>
+<p>Task Name: <%= task.name %></p>
+<p>Task Content: <%= task.content %></p>
 <% end %>
 
