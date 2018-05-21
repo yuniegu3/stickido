@@ -7,29 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+# storing to variables, in order to capture ids for associated models
 
+@project_ids = []
 # create 3 projects
-@project = Project.create(name: 'project one', user_id: 1)
-Project.create(name: 'project two', user_id: 1)
-Project.create(name: 'project three', user_id: 1)
-@project_id = @project.id
+3.times do 
+    @project = Project.create(
+        name: Faker::Book.title, 
+        user_id: 1)
+    @project_ids.push(@project.id)
+end
+
 
 # create 50 stickis for each project:
-@project_id = 1
-3.times do
+@project_id = @project_ids[0]
+@project_count = @project_ids.length
+@project_count.times do
     50.times do
         Sticki.create([
             name: '',
             content: Faker::Hipster.sentence(2),
             project_id: @project_id
         ])
+        
     end
     @project_id += 1
 end
 
 # create Tasks for each of the three projects @project_id defined above:
 # only the @task with task_id: nil needs to have a project_id assigned:
-@starting_project_id = @project_id
+@starting_project_id = @project_ids[0]
 3.times do
     5.times do 
         @parent_id = nil
@@ -48,10 +55,23 @@ end
         end
     end
     @project_id += 1;
-    if(@project_id > @starting_project_id + 3) 
-        @project_id -= 3
+    # to do: look up modulus operator in ruby
+    if(@project_id > @starting_project_id + @project_ids.length) 
+        @project_id -= @project_ids.length
     end
 end
 
-# create tags:
-Tag.create(name: 'tag')
+# create 20 tags
+@tags = []
+20.times do 
+    @new_tag = Tag.create({
+        name: Faker::Hipster.word
+    })
+end
+
+# associate the tags with stickies:
+@tags.length.do 
+    50.times do 
+        
+    end
+end
