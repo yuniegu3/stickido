@@ -17,12 +17,14 @@ Project.create(name: 'project three', user_id: 1)
 # create 50 stickis for each project:
 @project_id = 1
 3.times do
+  @sticki_name = 1
     50.times do
         Sticki.create([
-            name: '',
+            name: "Sticki Name #{@sticki_name}",
             content: Faker::Hipster.sentence(2),
             project_id: @project_id
         ])
+        @sticki_name += 1
     end
     @project_id += 1
 end
@@ -31,24 +33,24 @@ end
 # only the @task with task_id: nil needs to have a project_id assigned:
 @starting_project_id = @project_id
 3.times do
-    5.times do 
+    5.times do
         @parent_id = nil
         @task = Task.create(
-            task_id: @parent_id, 
+            task_id: @parent_id,
             content: Faker::Hipster.sentence(2),
             project_id: @project_id
             )
         @parent_id = @task.id
-        5.times do 
+        5.times do
             @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
             @parent_id = @task.id
-            5.times do 
+            5.times do
                 @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
             end
         end
     end
     @project_id += 1;
-    if(@project_id > @starting_project_id + 3) 
+    if(@project_id > @starting_project_id + 3)
         @project_id -= 3
     end
 end
