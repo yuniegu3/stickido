@@ -19,22 +19,6 @@ require 'faker'
 end
 
 
-# create 50 stickis for each project:
-@project_id = @project_ids[0]
-@project_count = @project_ids.length
-@project_count.times do
-    50.times do
-        Sticki.create([
-            name: '',
-            content: Faker::Hipster.sentence(2),
-            project_id: @project_id
-        ])
-        
-    end
-    @project_id += 1
-end
-
-
 # create 20 tags
 @tag_ids = []
 20.times do 
@@ -43,6 +27,62 @@ end
     })
     @tag_ids.push(@new_tag.id)
 end
+
+
+# rails aborted!
+# NoMethodError: undefined method `id' for #<Array:0x00007fbf69994168>
+def assosciate_tags_to_stickis(tag_ids, starting_id)
+    unique_tag_ids = {}
+    3.times do
+        random_tag_id = tag_ids[rand(tag_ids.length)]
+        while(unique_tag_ids[random_tag_id])
+            random_tag_id = tag_ids[rand(tag_ids.length)]
+            unique_tag_ids[random_tag_id] = true
+        end
+        StickisTag.create(
+            tag_id: random_tag_id,
+            sticki_id: model_instance.id
+        )
+    end
+end
+
+
+# create 50 stickis for each project:
+@project_id = @project_ids[0]
+@project_count = @project_ids.length
+@project_count.times do
+    50.times do
+        @sticki = Sticki.create([
+            name: Faker::Hipster.word,
+            content: Faker::Hipster.sentence(2),
+            project_id: @project_id
+        ])
+        # p "@sticki"
+        # p @sticki[id]
+        assosciate_tags_to_stickis(@tag_ids, @sticki)
+    end
+    @project_id += 1
+end
+
+
+
+
+
+def assosciate_tags_to_tasks(tag_ids, model_instance)
+    unique_tag_ids = {}
+    3.times do
+        random_tag_id = tag_ids[rand(tag_ids.length)]
+        while(unique_tag_ids[random_tag_id])
+            random_tag_id = tag_ids[rand(tag_ids.length)]
+            unique_tag_ids[random_tag_id] = true
+        end
+        TagsTask.create(
+            tag_id: random_tag_id,
+            task_id: model_instance.id
+        )
+    end
+end
+
 
 
 # create Tasks for each of the three projects @project_id defined above:
@@ -57,14 +97,15 @@ end
             content: Faker::Hipster.sentence(2),
             project_id: @project_id
             )
-        # associate some random tags with the task:
-        
+        assosciate_tags_to_tasks(@tag_ids, @task)
         @parent_id = @task.id
         5.times do 
             @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
             @parent_id = @task.id
+            assosciate_tags_to_tasks(@tag_ids, @task)
             5.times do 
                 @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
+                assosciate_tags_to_tasks(@tag_ids, @task)
             end
         end
     end
@@ -76,17 +117,7 @@ end
 end
 
 
-# associate the tags with random stickies:
-@tags.length.do 
-    50.times do 
-        
-    end
-end
 
 
-# associate the tags with random tasks:
-@tags.length.do 
-    50.times do 
-        
-    end
-end
+
+
