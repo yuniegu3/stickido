@@ -31,20 +31,20 @@ end
 
 # rails aborted!
 # NoMethodError: undefined method `id' for #<Array:0x00007fbf69994168>
-def assosciate_tags_to_stickis(tag_ids, starting_id)
-    unique_tag_ids = {}
-    3.times do
-        random_tag_id = tag_ids[rand(tag_ids.length)]
-        while(unique_tag_ids[random_tag_id])
-            random_tag_id = tag_ids[rand(tag_ids.length)]
-            unique_tag_ids[random_tag_id] = true
-        end
-        StickisTag.create(
-            tag_id: random_tag_id,
-            sticki_id: model_instance.id
-        )
-    end
-end
+# def assosciate_tags_to_stickis(tag_ids, starting_id)
+#     unique_tag_ids = {}
+#     3.times do
+#         random_tag_id = tag_ids[rand(tag_ids.length)]
+#         while(unique_tag_ids[random_tag_id])
+#             random_tag_id = tag_ids[rand(tag_ids.length)]
+#             unique_tag_ids[random_tag_id] = true
+#         end
+#         StickisTag.create(
+#             tag_id: random_tag_id,
+#             sticki_id: model_instance.id
+#         )
+#     end
+# end
 
 
 # create 50 stickis for each project:
