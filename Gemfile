@@ -59,3 +59,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'jquery-rails'
+
+
+# Google API gem
+gem 'google-api-client', require: 'google/apis/calendar_v3'
