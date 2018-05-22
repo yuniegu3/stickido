@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   # ask if we are using devise
 	resources :projects do
 	resources :tasks
-	end
-	resources :stickis
+  resources :stickis
+  end
+
 	resources :tags
 	root to: "home#index"
 	# root route
