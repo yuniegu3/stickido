@@ -34,9 +34,21 @@ end
     @project_id += 1
 end
 
+
+# create 20 tags
+@tag_ids = []
+20.times do 
+    @new_tag = Tag.create({
+        name: Faker::Hipster.word
+    })
+    @tag_ids.push(@new_tag.id)
+end
+
+
 # create Tasks for each of the three projects @project_id defined above:
 # only the @task with task_id: nil needs to have a project_id assigned:
 @starting_project_id = @project_ids[0]
+@task_count = 0
 3.times do
     5.times do 
         @parent_id = nil
@@ -45,6 +57,8 @@ end
             content: Faker::Hipster.sentence(2),
             project_id: @project_id
             )
+        # associate some random tags with the task:
+        
         @parent_id = @task.id
         5.times do 
             @task = Task.create(task_id: @parent_id, content: Faker::Hipster.sentence(2))
@@ -61,15 +75,16 @@ end
     end
 end
 
-# create 20 tags
-@tags = []
-20.times do 
-    @new_tag = Tag.create({
-        name: Faker::Hipster.word
-    })
+
+# associate the tags with random stickies:
+@tags.length.do 
+    50.times do 
+        
+    end
 end
 
-# associate the tags with stickies:
+
+# associate the tags with random tasks:
 @tags.length.do 
     50.times do 
         
