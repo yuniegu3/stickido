@@ -1,4 +1,4 @@
-<%= bootstrap_form_for @project, remote: true do |f| %>
+<%= bootstrap_form_for @project do |f| %>
     <%= f.text_field :name, id: :project_name %>
     <%= f.submit %>
 <% end %>

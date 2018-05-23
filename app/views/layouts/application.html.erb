@@ -11,11 +11,11 @@
   <body>
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#">Stickido</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
+        <a class="py-2" href="/">Stickido</a>
+        <a class="py-2 d-none d-md-inline-block" href="/">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
         <% if user_signed_in? %>
-        <a class="py-2 d-none d-md-inline-block" href="#">Projects</a>
+        <a class="py-2 d-none d-md-inline-block" href="/projects">Projects</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Stickis</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Tasks</a>
           <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "py-2 d-none d-md-inline-block") %>

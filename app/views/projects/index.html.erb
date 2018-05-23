@@ -1,9 +1,12 @@
 <h1> Project Index Page </h1><br/>
 
-<%= link_to 'New Project', new_project_path, remote: true, id: "ajaxcall" %>
+
+<%= link_to "Create New Project", new_project_path, remote: true, class: "btn btn-primary" %>
 
 
-<div id="project-form" style="display:none;"></div>
+<div id="myModal"></div>
+
+
 
 <div id="my-projects">
 <% @projects.each do |project| %>
