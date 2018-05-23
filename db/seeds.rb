@@ -36,17 +36,29 @@ end
         )
         @level_one_sequence += 1
         # create sub-tasks for the parent task
-        @parent_task_id = @task.id
+        @parent_task_id_one_deep = @task.id
         @level_two_sequence = 1
         5.times do
             @task = Task.create(
                 name:Faker::Hipster.word,
                 content:Faker::Hipster.sentence(2),
                 sequence: @level_two_sequence,
-                task_id: @parent_task_id,
+                task_id: @parent_task_id_one_deep,
                 project_id: nil
             )
             @level_two_sequence += 1
+            @parent_task_id = @task.id
+            @level_three_sequence = 1
+            5.times do
+                @task = Task.create(
+                name:Faker::Hipster.word,
+                content:Faker::Hipster.sentence(2),
+                sequence: @level_three_sequence,
+                task_id: @parent_task_id,
+                project_id: nil
+            )
+            @level_three_sequence += 1
+            end
         end
     end
 end
