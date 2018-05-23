@@ -1,13 +1,10 @@
 <div id="project-<%= project.id %>">
 <p>Project<%= project.name %></p>
-<% @tasks = project.tasks %>
-<% @tasks.each do |task| %>
-<p>Task Name<%= task.name %></p>
-<p>Task Content<%= task.content %></p>
-<p><a href="/projects/<%= project.id %>/tasks/<%=task.id%>">Task Link </a></p>
-	<% end %>
-<p><a href="/projects/<%= project.id %>"> Project Show link </a></p>
+<p><a href="/projects/<%= project.id %>/tasks"> Task </a></p>
+<p><a href="#"> Sticki (not working) </a></p>
+<%# Will link properly once Sticki nested route is created %>
 <p><%= link_to 'Edit', edit_project_path(project), remote: true %></p>
-<p><%= link_to 'Destroy', project_path(project), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %></p>
+<p id='#project-<%= project.id %>'><%= link_to 'Destroy', project_path(project), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %></p>
 </div>
-<br/>
+<br>
+<hr>
