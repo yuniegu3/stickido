@@ -3,7 +3,7 @@ class StickisController < ApplicationController
 
 #     stickis GET    /stickis(.:format) stickis#index
 	def index
-		@stickis = Sticki.where(project_id: params[:project_id]).order(:id)
+		@stickis = Sticki.where(project_id: params[:project_id]).order(id: :asc)
 	end
 
 #      sticki GET    /stickis/:id(.:format) stickis#show
