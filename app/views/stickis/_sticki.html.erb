@@ -6,8 +6,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= sticki.name %></h5>
         <p class="card-text"><%= sticki.content %></p>
-        <%= link_to 'Edit', edit_project_sticki_path(params[:project_id], sticki), class: "card-link btn btn-outline-primary", remote:true %>
-        <%= link_to 'Destroy', project_sticki_path(params[:project_id], sticki), method: :delete, class: "card-link btn btn-outline-danger", remote: true, data: { confirm: "Are you sure you want to delete '#{sticki.name}'?" } %>
+        <%= link_to 'Edit', edit_project_sticki_path(params[:project_id], sticki), class: "card-link btn btn-outline-primary" %>
+        <%= link_to 'Destroy', project_sticki_path(params[:project_id], sticki), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{sticki.name}'?" } %>
       </div>
     </div>
   </div>
