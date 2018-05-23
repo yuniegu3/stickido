@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180522031502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_id"
+    t.integer "sort"
   end
 
   create_table "stickis_tags", id: false, force: :cascade do |t|
