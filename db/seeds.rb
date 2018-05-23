@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+
 # storing to variables, in order to capture ids for associated models
 
 # create a user w/ id of one by signing up via devise and put the id in the @user_id variable:
@@ -72,14 +73,3 @@ end
         )
     end
 end
-
-
-
-
-
-
-
-
-
-
-
