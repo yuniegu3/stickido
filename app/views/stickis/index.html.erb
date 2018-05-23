@@ -2,9 +2,15 @@
 
 <%= link_to "Create Sticki", new_project_sticki_path, class: "btn btn-outline-primary" %>
 
-<div class="d-flex flex-wrap" id="my-stickis">
+<div class="grid-stack" id="my-stickis">
+    <% @x = 0 %>
     <% @stickis.each do |sticki| %>
       <%= render sticki %>
+      <% if @x == 10 %>
+        <% @x -= 10 %>
+      <% else %>
+        <% @x += 2 %>
+      <% end %>
     <% end %>
 </div>
 <br>
