@@ -1,15 +1,21 @@
 <h1> Sticki Index Page </h1>
 
-<p><a href="/stickis/new">Create Sticki</a></p>
+<%= link_to "Create Sticki", new_project_sticki_path, class: "btn btn-outline-primary" %>
 
-<div id="my-stickis">
+<div class="grid-stack" id="my-stickis">
+    <% @x = 0 %>
     <% @stickis.each do |sticki| %>
       <%= render sticki %>
+      <% if @x == 10 %>
+        <% @x -= 10 %>
+      <% else %>
+        <% @x += 2 %>
+      <% end %>
     <% end %>
 </div>
 <br>
 
 
-<%= link_to 'New Sticki', new_sticki_path, remote: true, id: "ajaxcall" %>
+<%= link_to "Create Sticki", new_project_sticki_path, class: "btn btn-outline-primary" %>
 
 <div id="sticki-form" style="display:none;"></div>
