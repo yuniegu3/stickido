@@ -1,6 +1,10 @@
 <h1> Sticki Index Page </h1>
 
-<%= link_to "Create Sticki", new_project_sticki_path, class: "btn btn-outline-primary" %>
+
+<%= link_to "Create New Sticki", new_project_sticki_path, remote: true, class: "btn btn-primary" %>
+
+
+<div id="myModal"></div>
 
 <div class="grid-stack" id="my-stickis">
     <% @x = 0 %>
@@ -16,5 +20,3 @@
 </div>
 <br>
 
-
-<div id="sticki-form" style="display:none;"></div>
