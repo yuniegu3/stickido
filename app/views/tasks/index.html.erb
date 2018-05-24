@@ -1,11 +1,15 @@
+<div id="myModal"></div>
+<%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-primary" %>
 
 <div id="taskFrame">
 <div id="taskFrameInnerWrap">
   <% @tasks.each do |task|%>
     <div class="listFrameContainer">
       <div class="individualTaskWrapLevelOne">
+        task.task
         <p> Get <%=task.name%> done</p>
-           
+            <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
       </div>
       <ol class="listFrame">
         <%@parent_id_one = task.id%>
@@ -15,12 +19,12 @@
             <li>
               <div class="individualTaskWrapLevelTwo">
         					<p> List Name:  <%=task.name%></p>
-                
                      <p>List content:  <%=task.content%></p>
                      <p>List sequence:  <%=task.sequence%></p>
                      <p>List due:  <%=task.duedate%></p>
                      <p>List id:  <%=task.id%></p>
-                
+        <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
               </div>
               <ol>
                 <%@parent_id_two = task.id%>
@@ -34,6 +38,8 @@
                             <p>List sequence:  <%=task.sequence%></p>
                             <p>List due:  <%=task.duedate%></p>
                             <p>List id:  <%=task.id%></p>
+        <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
                     </div>
                     <ol>
                       <%@parent_id_three = task.id%>
@@ -47,6 +53,8 @@
                                     <p>List sequence:  <%=task.sequence%></p>
                                     <p>List due:  <%=task.duedate%></p>
                                     <p>List id:  <%=task.id%></p>
+         <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
                             </div>
                           </li>
                         <%end%>

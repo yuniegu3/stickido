@@ -87,3 +87,5 @@ end
         )
     end
 end
+
+Project.create(name: "subtask holder", user_id: 1, id: 10000)

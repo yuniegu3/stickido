@@ -3,7 +3,7 @@ body {
 }
 #taskFrame {
   border: dotted magenta 5px;
-  overflow-y: hidden;
+  // overflow-y: hidden;
   // overflow-x: scroll;
 }
 #taskFrameInnerWrap {
