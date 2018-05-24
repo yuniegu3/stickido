@@ -1,28 +1,23 @@
 <div class="container">
-<div id="project-<%= project.id %>">
-<p>Project Name: <%= project.name %></p>
-<span>
-	<button class="btn btn-primary"> Edit <%= link_to '', edit_project_path(project), remote: true %>
-	</button>
-</span>
-<button class="btn btn-primary">
-	<span id='#project-<%= project.id %>'> Delete<%= link_to '', project_path(project), method: :delete, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %>
-	</button>
+	<div id="project-<%= project.id %>">
+		<p>Project Name: <%= project.name %></p>
+	<span>
+		<%= link_to ' Edit', edit_project_path(project),class: "btn btn-primary", remote: true %>
 	</span>
-
-<span>
+	<span id='#project-<%= project.id %>'> 
+		<%= link_to 'Delete', project_path(project),class: "btn btn-primary", method: :delete, remote: true, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %>
+	</span>
+	<span>
 	<a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">
 		<button class="btn btn-primary">Task</button>
 	</a> 
 	</span>
-
-
 	<span>
 		<a href="/projects/<%= project.id %>/stickis" data-turbolinks="false">
 		<button class="btn btn-primary">Sticki</button>
 	</a>
 	</span>
-
 </div>
 </div>
 <hr>
+
