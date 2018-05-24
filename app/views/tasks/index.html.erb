@@ -1,7 +1,75 @@
-<div class="scrollbar display-none">
+
+<div id="taskFrame">
+<div id="taskFrameInnerWrap">
+  <% @tasks.each do |task|%>
+    <div class="listFrameContainer">
+      <div class="individualTaskWrapLevelOne">
+        <p> Get <%=task.name%> done</p>
+           
+      </div>
+      <ol class="listFrame">
+        <%@parent_id_one = task.id%>
+        <%@subtasks_one = Task.where(task_id: @parent_id_one)%>
+        <%if @subtasks_one != nil%>
+          <%@subtasks_one.each do |task|%>
+            <li>
+              <div class="individualTaskWrapLevelTwo">
+        					<p> List Name:  <%=task.name%></p>
+                
+                     <p>List content:  <%=task.content%></p>
+                     <p>List sequence:  <%=task.sequence%></p>
+                     <p>List due:  <%=task.duedate%></p>
+                     <p>List id:  <%=task.id%></p>
+                
+              </div>
+              <ol>
+                <%@parent_id_two = task.id%>
+                <%@subtasks_two = Task.where(task_id: @parent_id_two)%>
+                <%if @subtasks_two != nil%>
+                <%@subtasks_two.each do |task|%>
+                  <li>
+                    <div class="individualTaskWrapLevelThree">
+          							<p> List Name:  <%=task.name%></p>
+                            <p>List content:  <%=task.content%></p>
+                            <p>List sequence:  <%=task.sequence%></p>
+                            <p>List due:  <%=task.duedate%></p>
+                            <p>List id:  <%=task.id%></p>
+                    </div>
+                    <ol>
+                      <%@parent_id_three = task.id%>
+                      <%@subtasks_three = Task.where(task_id: @parent_id_three)%>
+                      <%if @subtasks_three != nil%>
+                        <%@subtasks_three.each do |task|%>
+                          <li>
+                            <div class="individualTaskWrapLevelFour">
+                  							<p> List Name:  <%=task.name%></p>
+                                    <p>List content:  <%=task.content%></p>
+                                    <p>List sequence:  <%=task.sequence%></p>
+                                    <p>List due:  <%=task.duedate%></p>
+                                    <p>List id:  <%=task.id%></p>
+                            </div>
+                          </li>
+                        <%end%>
+                      <%end%>
+                    </ol>
+                  </li>
+                <%end%>	
+              </ol>
+              <%end%>
+            </li>
+          <%end%>
+        <%end%>
+      </ol>
+    </div>
+  <% end %>
+</div>
+</div>
+
+<div id="timeline-frame">
+<div class="scrollbar">
 	<div class="handle"></div>
 </div>
-  <div class="frame">
+ <div class="frame">
   	<ul class="slidee">
       <% @duedates.each do |d| %>
       <li class="border">
@@ -9,27 +77,9 @@
       </li>
       <% end %>
   	</ul>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
 <script>console.log('script tag in views/tasks/index linked');
-
 var slyelement = {
   obj: {},
   el: '.frame',
@@ -50,7 +100,6 @@ var slyelement = {
     scrollBar: $('.scrollbar')
   }
 };
-
 
 $(function(){
   slyelement.obj = new Sly($(slyelement.el), slyelement.options);
