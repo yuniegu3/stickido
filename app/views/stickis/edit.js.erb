@@ -1,11 +1,2 @@
-//confirm I am in this file
-console.log('I am hitting the js file for edit')
-
-//Grab the specific place at which the task I want to edit exists
-stickidiv = document.getElementById('sticki-<%= @sticki.id%>')
-
-//console log that task that I clicked on 
-console.log("Current task clicked " + stickidiv.innerText)
-
-//Gave up here and had to use JQuery to replace the TR element becuase trs dont like forms inside of them 
-$(stickidiv).replaceWith("<%= j (render 'form') %>");
+$("#myModal").html("<%= j render "modal"%>");
+$('#edit_modal').modal('show'); 
