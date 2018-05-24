@@ -16,5 +16,8 @@
  *= require project-frame
  *= require jquery-ui
  *= require gridstack
- *= require_self
+ *= require tasks
+ *= require temp-timeline
+ 
+ * require_self
  */
