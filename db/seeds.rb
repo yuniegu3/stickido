@@ -15,9 +15,9 @@ require 'faker'
 
 # create projects for the user, and store the projects' ids in an array:
 @project_ids = []
-3.times do 
+3.times do
     @project = Project.create(
-        name: Faker::Book.title, 
+        name: Faker::Book.title,
         user_id: @user_id
         )
     @project_ids.push(@project.id)
@@ -32,7 +32,8 @@ end
             content:Faker::Hipster.sentence(2),
             sequence: @level_one_sequence,
             project_id: project_id,
-            task_id: nil
+            task_id: nil,
+            duedate: Faker::Date.forward(7)
         )
         @level_one_sequence += 1
         # create sub-tasks for the parent task

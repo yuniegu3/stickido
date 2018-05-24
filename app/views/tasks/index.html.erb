@@ -1,23 +1,32 @@
-<h1> Tasks Index Page </h1>
-<%# hard coded to project 1 for now %>
+<div class="scrollbar">
+	<div class="handle"></div>
+</div>
+  <div class="frame">
+  	<ul class="slidee">
+      <% @duedates.each do |d| %>
+      <li class="border">
+        <%= d.duedate %>
+      </li>
+      <% end %>
+  	</ul>
+  </div>
 
-<div>
+  <div class="container">
+  <h1> Tasks Index Page </h1>
     <% @tasks.each do |task| %>
       <div>
-		<p><%= task.name %></p>
-		<p><%= task.content %></p>
-		<p><%= task.sequence %></p>
-		<p><%= task.duedate %></p>
-		<p><%= task.project_id %></p>
-		<p><%= task.task_id %></p>
-		<p>Project Name: <%= @project.name %><p>
-<p><%= link_to 'Edit', edit_project_task_path(@project.id, task.id)%> </p>
-<p><%= link_to 'Destroy', project_task_path(@project.id, task.id), method: :delete, data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %></p>
-<% end %>
-</div>
-</div>
+    		<p><%= task.name %></p>
+    		<p><%= task.content %></p>
+    		<p><%= task.sequence %></p>
+    		<p><%= task.duedate %></p>
+    		<p><%= task.project_id %></p>
+    		<p><%= task.task_id %></p>
+    		<p>Project Name: <%= @project.name %><p>
+        <p><%= link_to 'Edit', edit_project_task_path(@project.id, task.id)%> </p>
+        <p><%= link_to 'Destroy', project_task_path(@project.id, task.id), method: :delete, data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %></p>
+      </div>
+    <% end %>
 <br>
 
 <%= link_to "New Task", new_project_task_path %>
-
-
+</div>
