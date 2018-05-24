@@ -16,6 +16,9 @@ class ProjectsController < ApplicationController
 # new_project GET  /projects/new(.:format)  projects#new
 	def new
 		@project = Project.new
+		respond_to do |format|
+			format.js
+		end
 	end
 
 # POST   /projects(.:format)  projects#create
@@ -23,7 +26,6 @@ class ProjectsController < ApplicationController
 		Project.create(project_params)
 		redirect_to '/projects'
 	end
-
 # edit_project GET    /projects/:id/edit(.:format)    projects#edit
 	def edit
 		@project = Project.find(params[:id])

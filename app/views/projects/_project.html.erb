@@ -1,10 +1,21 @@
-<div id="project-<%= project.id %>">
-<p>Project<%= project.name %></p>
-<p><a href="/projects/<%= project.id %>/tasks"> Task </a></p>
-<p><a href="#"> Sticki (not working) </a></p>
-<%# Will link properly once Sticki nested route is created %>
-<p><%= link_to 'Edit', edit_project_path(project), remote: true %></p>
-<p id='#project-<%= project.id %>'><%= link_to 'Destroy', project_path(project), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %></p>
+<div class="container">
+	<div id="project-<%= project.id %>">
+		<p>Project Name: <%= project.name %></p>
+		<%= link_to 'Edit', edit_project_path(project),class: "btn btn-primary", remote: true %>
+	<span> 
+		<%= link_to 'Delete', project_path(project),class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %>
+	</span>
+	<span>
+	<a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">
+		<button class="btn btn-primary">Task</button>
+	</a> 
+	</span>
+	<span>
+		<a href="/projects/<%= project.id %>/stickis" data-turbolinks="false">
+		<button class="btn btn-primary">Sticki</button>
+	</a>
+	</span>
 </div>
-<br>
+</div>
 <hr>
+

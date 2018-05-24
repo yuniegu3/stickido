@@ -3,7 +3,7 @@ class StickisController < ApplicationController
 
 #     stickis GET    /stickis(.:format) stickis#index
 	def index
-		@stickis = Sticki.where(project_id: params[:project_id]).order(:id)
+		@stickis = Sticki.where(project_id: params[:project_id]).order(created_at: :desc)
 	end
 
 #      sticki GET    /stickis/:id(.:format) stickis#show
@@ -29,6 +29,7 @@ class StickisController < ApplicationController
 
 # edit_sticki GET    /stickis/:id/edit(.:format) stickis#edit
 	def edit
+		@project = Project.find(params[:project_id])
 		@sticki = Sticki.find(params[:id])
 	end
 
@@ -36,7 +37,7 @@ class StickisController < ApplicationController
 #             PUT    /stickis/:id(.:format) stickis#update
 	def update
 		@sticki = Sticki.find(params[:id])
-    @sticki.update(sticki_params)
+   		@sticki.update(sticki_params)
 		redirect_to "/projects/#{@sticki.project_id}/stickis"
 		# this should go back to the tasks page right? Cuz stickis will be shown there(on desktop view)
 		# find out how to redirect to /stickis if mobile view.
