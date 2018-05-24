@@ -1,9 +1,16 @@
-<div class="card m-1" style="width: 18rem;">
-  <div class="card-body">
-    <%= bootstrap_form_for(@sticki, url: project_sticki_path(@sticki), html: { method: :put }) do |f| %>
-        <%= f.text_field :name, id: :sticki_name %>
-        <%= f.text_area :content, id: :sticki_content, required: true %>
-        <%= f.submit %>
-    <% end %>
-  </div>
-</div>
+<%# <div class="card m-1" style="width: 18rem;">
+  <div class="card-body"> %>
+  <%#  <%= bootstrap_form_for(@sticki, url: project_sticki_path(@sticki), html: { method: :put }) do |f| %>
+     <%#   <%= f.text_field :name, id: :sticki_name %>
+     <%#   <%= f.text_area :content, id: :sticki_content, required: true %>
+     <%#   <%= f.submit %>
+   <%# <% end %>
+ <%# </div>
+</div> %>
+
+
+<%= bootstrap_form_for(:sticki, url: project_stickis_path) do |f| %>
+  <%= f.text_field :name, id: :sticki_name %>
+  <%= f.text_area :content, id: :sticki_content, required: true %>
+  <%= f.submit %>
+<% end %>

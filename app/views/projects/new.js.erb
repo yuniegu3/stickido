@@ -1,10 +1,4 @@
-
-console.log('Im hitting this file for the new action');
-//Selects hidden form element on index.html.erb
-let form = document.getElementById('project-form');
-//set the innerHTML to a string of html elements
-form.innerHTML = "<%= j (render 'form') %>";
+$("#myModal").html("<%= j render "modal"%>");
+$('#form_modal').modal('show'); 
 
 
-
-form.style.display = "block"
