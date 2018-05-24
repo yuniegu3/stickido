@@ -1,0 +1,12 @@
+<%= bootstrap_form_for(:task, url: project_tasks_path) do |f| %>
+    <%= f.text_field :name, id: :task_name %>
+    <%= f.text_field :content, id: :task_content, required: true %>
+    <%= f.number_field :sequence, id: :task_sequence %>
+    <%= f.text_field :duedate, id: :task_duedate %>
+    <%= f.hidden_field :project_id, :value => @project.id %>
+    <%= f.hidden_field :task_id, :value => nil %>
+    <%= f.submit %>
+<% end %>
+
+
+

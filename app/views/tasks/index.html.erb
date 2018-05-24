@@ -10,29 +10,32 @@
       <% end %>
   	</ul>
   </div>
-
+  <%= link_to "Create New Task", new_project_task_path, remote: true, class: "btn btn-primary" %>
+<div id="myModal"></div>
   <div class="container">
   <h1> Tasks Index Page </h1>
     <% @tasks.each do |task| %>
       <div>
-    		<p><%= task.name %></p>
-    		<p><%= task.content %></p>
-    		<p><%= task.sequence %></p>
-    		<p><%= task.duedate %></p>
-    		<p><%= task.project_id %></p>
-    		<p><%= task.task_id %></p>
+    		<p>Name: <%= task.name %></p>
+    		<p>Content: <%= task.content %></p>
+    		<p>Sequence: <%= task.sequence %></p>
+    		<p>Duedate: <%= task.duedate %></p>
+    		<p>Project_id: <%= task.project_id %></p>
+    		<p>Task_id: <%= task.task_id %></p>
     		<p>Project Name: <%= @project.name %><p>
         <p><%= link_to 'Edit', edit_project_task_path(@project.id, task.id)%> </p>
         <p><%= link_to 'Destroy', project_task_path(@project.id, task.id), method: :delete, data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %></p>
+         <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
       </div>
     <% end %>
 <br>
 
-<%= link_to "New Task", new_project_task_path %>
+
 </div>
 
 
-<script>console.log('tasks.js linked');
+<script>
 
 var slyelement = {
   obj: {},
