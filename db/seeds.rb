@@ -24,6 +24,7 @@ require 'faker'
 end
 
 # create tasks to belong to each of the projects that were made
+# create tasks to belong to each of the projects that were made
 @project_ids.each do |project_id|
     @level_one_sequence = 1
     10.times do
@@ -57,8 +58,20 @@ end
                 sequence: @level_three_sequence,
                 task_id: @parent_task_id,
                 project_id: nil
-            )
-            @level_three_sequence += 1
+                )
+                @parent_task_id_three_deep = @task.id
+                @level_four_sequence = 1
+                3.times do 
+                    @task = Task.create(
+                        name:Faker::Hipster.word,
+                        content:Faker::Hipster.sentence(2),
+                        sequence: @level_four_sequence,
+                        task_id: @parent_task_id_three_deep,
+                        project_id: nil
+                        )
+                    @level_four_sequence += 1
+                end
+                @level_three_sequence += 1
             end
         end
     end
