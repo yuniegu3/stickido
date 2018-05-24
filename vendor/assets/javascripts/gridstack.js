@@ -5,6 +5,7 @@
  * gridstack.js may be freely distributed under the MIT license.
  * @preserve
 */
+console.log('gridstack.js linked');
 (function(factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery', 'lodash'], factory);

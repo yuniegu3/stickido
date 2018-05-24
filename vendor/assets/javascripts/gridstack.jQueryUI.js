@@ -5,6 +5,7 @@
  * gridstack.js may be freely distributed under the MIT license.
  * @preserve
 */
+console.log('gridstackjqueryui.js linked');
 (function(factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery', 'lodash', 'gridstack', 'jquery-ui/data', 'jquery-ui/disable-selection', 'jquery-ui/focusable',

@@ -4,7 +4,7 @@
 //= require action_cable
 //= require_self
 //= require_tree ./channels
-
+console.log('cable.js linked');
 (function() {
   this.App || (this.App = {});
 

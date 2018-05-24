@@ -5,7 +5,7 @@
  * Licensed under the MIT license.
  * http://opensource.org/licenses/MIT
  */
-
+console.log('sly.js linked');
 ;(function ($, w, undefined) {
 	'use strict';
 

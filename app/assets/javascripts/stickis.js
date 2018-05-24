@@ -1,3 +1,5 @@
+console.log('stickis.js linked');
+
 $(document).on('turbolinks:load', function() {
     var options = {
         cellHeight: 80,
