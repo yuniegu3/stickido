@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 	def index
 		@project = Project.find(params[:project_id])
 		@tasks = @project.tasks
-		@duedates = Task.select(:duedate).where.not(duedate: nil).distinct.order(duedate: 'ASC')
+		@duedates = Task.select(:duedate).where.not(duedate: nil).distinct.order(duedate: 'ASC') 
 	end
 
 # project_task GET   /projects/:project_id/tasks/:id(.:format)  tasks#show

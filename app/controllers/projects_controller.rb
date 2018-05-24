@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
 # projects GET  /projects(.:format)   projects#index
 	def index
-		@projects = Project.all
+		@projects = Project.where(user_id: current_user.id)
 	end
 
 # project GET  /projects/:id(.:format)   projects#show
