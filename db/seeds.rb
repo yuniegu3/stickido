@@ -27,7 +27,7 @@ end
 # create tasks to belong to each of the projects that were made
 @project_ids.each do |project_id|
     @level_one_sequence = 1
-    10.times do
+    1.times do
         @task = Task.create(
             name:Faker::Hipster.word,
             content:Faker::Hipster.sentence(2),
@@ -40,7 +40,7 @@ end
         # create sub-tasks for the parent task
         @parent_task_id_one_deep = @task.id
         @level_two_sequence = 1
-        10.times do
+        1.times do
             @task = Task.create(
                 name:Faker::Hipster.word,
                 content:Faker::Hipster.sentence(2),
@@ -51,7 +51,7 @@ end
             @level_two_sequence += 1
             @parent_task_id = @task.id
             @level_three_sequence = 1
-            5.times do
+            1.times do
                 @task = Task.create(
                 name:Faker::Hipster.word,
                 content:Faker::Hipster.sentence(2),
@@ -61,7 +61,7 @@ end
                 )
                 @parent_task_id_three_deep = @task.id
                 @level_four_sequence = 1
-                3.times do 
+                1.times do 
                     @task = Task.create(
                         name:Faker::Hipster.word,
                         content:Faker::Hipster.sentence(2),
