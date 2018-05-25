@@ -1,12 +1,13 @@
 <div id="myModal"></div>
-<%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-primary" %>
+<%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-outline-primary" %>
+<button class="showalltasks btn btn-outline-primary">Show All Tasks</button>
 
 <div id="taskFrame">
 <div id="taskFrameInnerWrap">
   <% @tasks.each do |task|%>
-    <div class="listFrameContainer">
+    <div class="<%= task.duedate %> listFrameContainer">
       <div class="individualTaskWrapLevelOne">
-       
+
         <p> Get <%=task.name%> done</p>
             <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
         <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
@@ -61,7 +62,7 @@
                       <%end%>
                     </ol>
                   </li>
-                <%end%>	
+                <%end%>
               </ol>
               <%end%>
             </li>
@@ -74,18 +75,23 @@
 </div>
 
 <div id="timeline-frame">
-<div class="scrollbar">
-	<div class="handle"></div>
-</div>
- <div class="frame">
-  	<ul class="slidee">
-      <% @duedates.each do |d| %>
-      <li class="border">
-        <%= d.duedate %>
-      </li>
-      <% end %>
-  	</ul>
-</div>
+  <div class="scrollbar">
+  	<div class="handle"></div>
+  </div>
+   <div class="frame">
+    	<ul class="slidee">
+        <% @duedates.each do |d| %>
+        <li class="timelinesection border" id="<%= d.duedate %>"><%= d.duedate %></li>
+        <script>
+          $(`#<%= d.duedate %>`).click(function(){
+            let target = '<%= d.duedate %>';
+            $(`.${target}`).show();
+            $(`.${target}`).siblings().hide();
+          });
+        </script>
+        <% end %>
+    	</ul>
+  </div>
 </div>
 <script>
 console.log('script tag in views/tasks/index linked');
@@ -103,7 +109,7 @@ var slyelement = {
     touchDragging: 1,
     releaseSwing: 1,
     startAt: 0,
-    scrollBy: 1,
+    scrollBy: 0,
     speed: 300,
     elasticBounds: 1,
     easing: 'swing', // easeInOutElastic, easeOutBounce
@@ -120,4 +126,8 @@ $(function(){
 $(window).resize(function(e) {
   slyelement.obj.reload();
 });
+
+$('.showalltasks').click(function(){
+  $('.listFrameContainer').show();
+})
 </script>
