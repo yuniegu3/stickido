@@ -20,4 +20,5 @@
 //= require gridstack.jQueryUI
 //= require view-selectors
 //= require sly
+//= require cable
 //= require_tree .

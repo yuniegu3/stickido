@@ -9,7 +9,7 @@
          <a class="" href="#">edit</a>
          <a class="" href="#">delete</a>
       </div>
-      <ol class="listFrame">
+      <ol class="listFrame hide-this">
         <%@parent_id_one = task.id%>
         <%@subtasks_one = Task.where(task_id: @parent_id_one)%>
         <%if @subtasks_one != nil%>
@@ -27,7 +27,7 @@
                   <a class="" href="#">delete</a>
               </div>
               </div>
-              <ol>
+              <ol class="hide-this">
                 <%@parent_id_two = task.id%>
                 <%@subtasks_two = Task.where(task_id: @parent_id_two)%>
                 <%if @subtasks_two != nil%>
@@ -46,7 +46,7 @@
                       <a class="" href="#">delete</a>
                     </div>
                     </div>
-                    <ol>
+                    <ol class="hide-this">
                       <%@parent_id_three = task.id%>
                       <%@subtasks_three = Task.where(task_id: @parent_id_three)%>
                       <%if @subtasks_three != nil%>
@@ -95,9 +95,51 @@
   	</ul>
 </div>
 </div>
+
+<script>
+console.log('toggle-lists.js connected');
+
+const targets = document.getElementsByClassName('listFrameContainer');
+const lis = document.getElementsByTagName('li');
+const showMoreButtons = document.getElementsByClassName('showMoreInfo');
+
+function hide(e) {
+  const { nextElementSibling } = e.target;
+
+  if (nextElementSibling && nextElementSibling.classList.contains('hide-this')) {
+    setTimeout(() => {
+      nextElementSibling.classList.toggle('hidden');
+      e.target.classList.toggle('has-children');
+    }, 0);
+  }
+}
+
+function showMore(e) {
+  const { nextElementSibling } = e.target;
+
+  if (nextElementSibling && nextElementSibling.classList.contains('moreInfo')) {
+    setTimeout(() => {
+      nextElementSibling.classList.toggle('hidden');
+    }, 0);
+  }
+}
+
+for (let i = 0; i < showMoreButtons.length; i++) {
+  showMoreButtons[i].addEventListener('click', showMore);
+
+}
+
+for (let i = 0; i < targets.length; i++) {
+  targets[i].addEventListener('click', hide);
+}
+
+for (let i = 0; i < lis.length; i++) {
+  lis[i].setAttribute('draggable', 'true');
+}
+
+</script>
 <script>
 console.log('script tag in views/tasks/index linked');
-
 var slyelement = {
   obj: {},
   el: '.frame',

@@ -1,0 +1,19 @@
+li {
+  cursor: pointer !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.has-children {
+  border-bottom: 10px dotted orange !important;
+}
+
+/* .hide-this {
+    cursor: pointer;
+  }
+  
+  .hide-this > * {
+    cursor: auto;
+  } */

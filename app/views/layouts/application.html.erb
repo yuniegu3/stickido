@@ -10,24 +10,38 @@
   </head>
 
   <body>
-    <nav class="site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="/">Stickido</a>
-        <a class="py-2 d-none d-md-inline-block" href="/">Home</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
+    <nav class="header">
+
+
+
+
+
+     
+        <a class="" href="/">Stickido</a>
+
+
         <% if user_signed_in? %>
-        <a class="py-2 d-none d-md-inline-block" href="/projects" data-turbolinks="false">Projects</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Stickis</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Tasks</a>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "py-2 d-none d-md-inline-block") %>
+
+            <%if @page_location != "projects"%>
+                  <a class="" href="/projects" data-turbolinks="false">all my projects</a>
+                <%end%>
+              
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "") %>
         <% else %>
-          <a class="py-2 d-none d-md-inline-block" href="users/sign_up">Sign Up</a>
-          <%= link_to('Login', new_user_session_path, class: "py-2 d-none d-md-inline-block") %>
+          <a class="" href="users/sign_up">Sign Up</a>
+          <%= link_to('Login', new_user_session_path, class: "") %>
         <% end %>
-      </div>
+      
+      
+      
+      
+      
+      
+      
     </nav>
 
       <%= yield %>
 
   </body>
 </html>
+
