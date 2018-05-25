@@ -11,27 +11,29 @@
     <div id="my-projects">
         <% @projects.each do |project| %>
             <div class="container">
-                <div id="project-<%= project.id %>">
-                    <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">
-                        <button class="btn btn-primary"><%= project.name %></button>
-                    </a> 
-                    <%= link_to 'Edit', edit_project_path(project),class: "edit-button", remote: true %> 
-                        <%= link_to 'Delete', project_path(project),class: "delete-button", method: :delete, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %>
-                    <div>
-                <button class="go-to-stickies"> <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">
-                        Do
-                    </a> </button>
-            <a href="/projects/<%= project.id %>/stickis" data-turbolinks="false">
-                Sticki
-            </a>
-                </div>
+                <div id="project-<%= project.id %>" class="project-summary-wrap">
+                    <div class="project-title-edit-delete">
 
-		            
-	                
-	                
+
+                            <button class="take-me-to-project"> <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false"><%= project.name %></a></button>
+                            
+                           
+                
+                            </div>
+                            <%= link_to 'Delete', project_path(project),class: "delete-button", method: :delete, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %>
+
+                            <%= link_to 'Edit', edit_project_path(project),class: "edit-button", remote: true %> 
+                            
+                            
+
+
+                <div>
+                    
+                <button class="go-to-stickies"><a href="/projects/<%= project.id %>/stickis" data-turbolinks="false">Sticki</a></button>
+                    <button class="go-to-stickies"> <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">Do</a></button>
+                </div>
                 </div>
             </div>
-
         <% end %>
     </div>
  

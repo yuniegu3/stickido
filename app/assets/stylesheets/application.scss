@@ -102,15 +102,16 @@ body {
   margin: 0.5rem;
   background-size: contain;
   color: rgba(128, 0, 128, 0.011);
-  border: dotted magenta 1px;
+  // border: dotted magenta 1px;
+  transform: translate(30px, 0px);
 }
 
 .edit-button:hover {
   padding: 0.25rem;
   color: rgba(128, 0, 128, 0.011);
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBpmAOrYa6Tyoaedm_lOyKsTbL6tcail1MxbXpuD69ke6cnFbAtg");
-  animation-name: tada;
-  animation-duration: 1s;
+  // animation-name: tada;
+  // animation-duration: 1s;
 }
 
 .delete-button {
@@ -120,7 +121,8 @@ body {
   background-repeat: no-repeat;
   color: rgba(128, 0, 128, 0.011);
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQvj2Om0zUKAbh2uIusFflX8UMCmMNfDcz1RXpK8WMBNpHACQ");
-  opacity: 1;
+  opacity: 0.5;
+  transform: translate(20px, 0px);
 }
 
 .delete-button:hover {
@@ -131,12 +133,14 @@ body {
   color: rgba(128, 0, 128, 0);
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQvj2Om0zUKAbh2uIusFflX8UMCmMNfDcz1RXpK8WMBNpHACQ");
   opacity: 1;
-  animation-name: shake;
-  animation-duration: 1s;
+  // animation-name: shake;
+  // animation-duration: 1s;
 }
 
 // stickies and projects buttons:
-
+button {
+  border: none;
+}
 .go-to-stickies {
   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
   background-repeat: no-repeat;
@@ -147,6 +151,7 @@ body {
   color: black;
   margin: 0.5rem;
   color: white;
+  transform: translate(50px, 30px) scale(1.5);
 }
 
 .go-to-stickies a {
@@ -164,4 +169,34 @@ body {
   color: black;
   margin: 0.5rem;
   color: white;
+}
+
+.project-summary-wrap {
+  // border: solid magenta 2px;
+  height: 200px;
+}
+
+.take-me-to-project {
+  background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.take-me-to-project a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  flex-grow: 2;
+}
+
+.project-title-edit-delete {
+  // border: green solid 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
