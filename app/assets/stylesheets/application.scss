@@ -28,31 +28,33 @@
  *= require toggle-view
  *= require landing-page
  *= require_self
+ *= require product
+ *= require project
  */
 
-// body {
-//   // font-family: "Indie Flower", cursive;
-//   font-family: "Delius", cursive;
-// }
-//
+body {
+  // font-family: "Indie Flower", cursive;
+  font-family: "Delius", cursive;
+}
+
 // .find {
 //   color: magenta;
 // }
-//
+
 // .findOne {
 //   color: green;
 // }
-//
+
 // .findTwo {
 //   color: purple;
 // }
-//
+
 // // timeline styles:
 // .scrollbar {
 //   height: 1rem;
 //   transform: translate(0px, 100px);
 // }
-//
+
 // .border {
 //   background-color: purple;
 //   border-radius: 15px;
@@ -61,14 +63,14 @@
 //   justify-content: center;
 //   align-items: center;
 // }
-//
+
 // #timeline-text {
 //   color: white;
 //   font-family: "Delius", cursive;
 //   display: inline-block;
 //   width: 1rem;
 // }
-//
+
 // // PROJECTS PAGE:
 // .projectPageWrap {
 //   width: 20vw;
@@ -76,7 +78,7 @@
 //   display: flex;
 //   flex-direction: column;
 // }
-//
+
 // .btn,
 // .btn-primary {
 //   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
@@ -87,25 +89,26 @@
 //   color: black;
 //   margin: 0.5rem;
 // }
-//
+
 // .btn,
 // .btn-primary:hoveer {
 //   color: purple;
 // }
-//
+
 // // edit and delete buttons
-//
+
 // .edit-button {
 //   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKIFMm5fRz-89p0XEDYPpL93B-0UFOwJhjyRmYCtn5Ip5TtKvs");
 //   background-repeat: no-repeat;
-//
+
+
 //   margin: 0.5rem;
 //   background-size: contain;
 //   color: rgba(128, 0, 128, 0.011);
 //   // border: dotted magenta 1px;
 //   transform: translate(30px, 0px);
 // }
-//
+
 // .edit-button:hover {
 //   padding: 0.25rem;
 //   color: rgba(128, 0, 128, 0.011);
@@ -137,6 +140,7 @@
 //   // animation-duration: 1s;
 // }
 
+
 // stickies and projects buttons:
 // button {
 //   border: none;
@@ -153,12 +157,12 @@
 //   color: white;
 //   transform: translate(50px, 30px) scale(1.5);
 // }
-//
+
 // .go-to-stickies a {
 //   display: inline-block;
 //   padding-bottom: 0.25rem;
 // }
-//
+
 // .do-new-project {
 //   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
 //   background-repeat: no-repeat;
@@ -170,12 +174,12 @@
 //   margin: 0.5rem;
 //   color: white;
 // }
-//
+
 // .project-summary-wrap {
 //   // border: solid magenta 2px;
 //   height: 200px;
 // }
-//
+
 // .take-me-to-project {
 //   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
 //   background-repeat: no-repeat;
@@ -186,14 +190,14 @@
 //   display: flex;
 //   justify-content: center;
 // }
-//
+
 // .take-me-to-project a {
 //   text-decoration: none;
 //   color: white;
 //   display: inline-block;
 //   flex-grow: 2;
 // }
-//
+
 // .project-title-edit-delete {
 //   // border: green solid 2px;
 //   display: flex;

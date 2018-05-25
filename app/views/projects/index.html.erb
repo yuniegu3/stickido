@@ -1,42 +1,35 @@
-<%@page_location = "projects"%>
-<div class="projectPageWrap">
 
-   <%= link_to "stickido a new project", new_project_path, remote: true, class: "do-new-project" %>
+<h1 class="blog-post-title">Projects</h1>
 
 
-    <h1>projects</h1>
+ <div id="myModal"></div>
 
-    <div id="myModal"></div>
+<div class="container">
+    <%= link_to "stickido a new project", new_project_path, remote: true %>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                                 <th>Project Name</th>
+                    </tr>
+                             </thead>
 
-    <div id="my-projects">
-        <% @projects.each do |project| %>
-            <div class="container">
-                <div id="project-<%= project.id %>" class="project-summary-wrap">
-                    <div class="project-title-edit-delete">
+                        <tbody>
 
-
-                            <button class="take-me-to-project"> <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false"><%= project.name %></a></button>
-                            
-                           
-                
-                            </div>
-                            <%= link_to 'Delete', project_path(project),class: "delete-button", method: :delete, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %>
-
-                            <%= link_to 'Edit', edit_project_path(project),class: "edit-button", remote: true %> 
-                            
-                            
-
-
-                <div>
+                    <% @projects.each do |project| %>
+                    <tr>
+                        <td><%= project.name %></td>  
+                            <td><%= link_to 'Edit', edit_project_path(project), remote: true %>
+                            </td>
+                            <td><%= link_to 'Delete', project_path(project), method: :delete, data: { confirm: "Are you sure you want to delete '#{project.name}'?" } %></td>
+                            <td><a href="/projects/<%= project.id %>/stickis" data-turbolinks="false">Sticki</a></td>
+                            <td> <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">Do</a></td>
+                    </tr>
+                            <% end %>
+                    </tbody>
+                </table>
+                      
                     
-                <button class="go-to-stickies"><a href="/projects/<%= project.id %>/stickis" data-turbolinks="false">Sticki</a></button>
-                    <button class="go-to-stickies"> <a href="/projects/<%= project.id %>/tasks" data-turbolinks="false">Do</a></button>
-                </div>
-                </div>
             </div>
-        <% end %>
-    </div>
- 
-</div>
+
 
 

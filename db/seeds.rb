@@ -26,6 +26,7 @@ end
 # create tasks to belong to each of the projects that were made
 
 @project_ids.each do |project_id|
+
     5.times do
         @task = Task.create(
             name:Faker::Hipster.word,
@@ -35,6 +36,7 @@ end
             duedate: Faker::Date.forward(7)
         )
         # create sub-tasks for the parent task
+
           end
             5.times do
                 @task = Task.create(
