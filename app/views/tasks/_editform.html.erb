@@ -2,8 +2,8 @@
     <%= f.text_field :name, id: :task_name %>
     <%= f.text_field :content, id: :task_content, required: true %>
     <%= f.number_field :sequence, id: :task_sequence %>
-    <%= f.text_field :duedate, id: :task_duedate %>
+    <%= f.date_field :duedate, id: :task_duedate %>
     <%= f.hidden_field :project_id, id: :project_id %>
-	<%= f.collection_select :task_id, Task.where(project_id: @project.id).order(:name), :id, :name, {include_blank: true} %> 
+	<%= f.collection_select :task_id, Task.where(project_id: @project.id).order(:name), :id, :name, {include_blank: true} %>
     <%= f.submit %>
 <% end %>
