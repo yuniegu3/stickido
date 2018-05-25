@@ -1,0 +1,15 @@
+.header {
+  height: 10vh;
+  border: solid orange 3px;
+}
+
+.header a {
+  margin-top: 1rem;
+}
+
+.title-button {
+  font-size: 5rem;
+  position: absolute;
+  margin: auto;
+  left: calc(50vw);
+}

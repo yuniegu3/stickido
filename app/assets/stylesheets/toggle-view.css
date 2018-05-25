@@ -1,0 +1,26 @@
+/* styles needed to toggle the nested task view */
+
+li {
+  cursor: pointer !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.has-children {
+  border-bottom: 10px solid purple !important;
+}
+
+.show-animate {
+  /* animation-name: fadeIn;
+  animation-duration: 1s; */
+}
+
+/* .hide-this {
+    cursor: pointer;
+  }
+  
+  .hide-this > * {
+    cursor: auto;
+  } */
