@@ -20,7 +20,13 @@
  *= require gridstack
  *= require timeline
  *= require tasks
+ *= require stickis
  *= require task-frames
  *= require task-items
+ *= require header
  *= require_self
  */
+
+body {
+  font-family: "Indie Flower", cursive;
+}
