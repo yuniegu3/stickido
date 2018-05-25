@@ -4,7 +4,7 @@
     <%= f.number_field :sequence, id: :task_sequence %>
     <%= f.text_field :duedate, id: :task_duedate %>
 	<%= f.text_field :project_id, id: :task_project_id %>
-    <%= f.text_field :task_id, id: :task_task_id %>
+	<%= f.collection_select :task_id, Task.where(project_id: @project.id).order(:name), :id, :name, {include_blank: true} %> 
     <%= f.submit %>
 <% end %>
 

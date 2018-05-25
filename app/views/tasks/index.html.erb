@@ -6,7 +6,7 @@
   <% @tasks.each do |task|%>
     <div class="listFrameContainer">
       <div class="individualTaskWrapLevelOne">
-        task.task
+       
         <p> Get <%=task.name%> done</p>
             <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
         <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
