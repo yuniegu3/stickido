@@ -5,28 +5,48 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
   </head>
 
   <body>
-    <nav class="site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="/">Stickido</a>
-        <a class="py-2 d-none d-md-inline-block" href="/">Home</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
-        <% if user_signed_in? %>
-        <a class="py-2 d-none d-md-inline-block" href="/projects" data-turbolinks="false">Projects</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Stickis</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Tasks</a>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "py-2 d-none d-md-inline-block") %>
-        <% else %>
-          <a class="py-2 d-none d-md-inline-block" href="users/sign_up">Sign Up</a>
-          <%= link_to('Login', new_user_session_path, class: "py-2 d-none d-md-inline-block") %>
+    <nav class="header">
+
+    <%if @page_location != "landing"%>
+
+        <a class="title-button" href="/">Stickido</a>
         <% end %>
-      </div>
+        <% if user_signed_in? %>
+            <%if @page_location != "projects"%>
+
+
+                  <a class="" href="/projects" data-turbolinks="false">all my projects</a>
+
+
+                <%end%>
+
+
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "") %>
+
+
+          <% else %>
+
+              <%if @page_location != "landing" && @page_location != "sign_in"%>
+                <a class="" href="users/sign_up">Sign Up</a>
+
+
+                <%= link_to('Login', new_user_session_path, class: "") %>
+
+
+            <% end %>
+          <% end %>
+
+
     </nav>
 
       <%= yield %>
 
   </body>
 </html>
+

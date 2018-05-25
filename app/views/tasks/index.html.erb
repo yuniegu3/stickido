@@ -4,58 +4,72 @@
 
 <div id="taskFrame">
 <div id="taskFrameInnerWrap">
+<a class="" href="#">new</a>
   <% @tasks.each do |task|%>
     <div class="<%= task.duedate %> listFrameContainer">
-      <div class="individualTaskWrapLevelOne">
-
-        <p> Get <%=task.name%> done</p>
-            <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
-        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
+      <div class="individualTaskWrapLevelOne individualTaskWrap">
+        <p id="listTitle"> Get <%=task.name%> done</p>
+         <a class="" href="#">edit</a>
+         <a class="" href="#">delete</a>
       </div>
-      <ol class="listFrame">
+      <ol class="listFrame hide-this">
         <%@parent_id_one = task.id%>
         <%@subtasks_one = Task.where(task_id: @parent_id_one)%>
         <%if @subtasks_one != nil%>
           <%@subtasks_one.each do |task|%>
             <li>
-              <div class="individualTaskWrapLevelTwo">
+              <div class="individualTaskWrapLevelTwo individualTaskWrap">
         					<p> List Name:  <%=task.name%></p>
-                     <p>List content:  <%=task.content%></p>
-                     <p>List sequence:  <%=task.sequence%></p>
-                     <p>List due:  <%=task.duedate%></p>
-                     <p>List id:  <%=task.id%></p>
-        <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
-        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
+                  <button class="showMoreInfo"> show more </button>
+                  <div class="moreInfo">
+                  <p>List content:  <%=task.content%></p>
+                </div>
+                <div>
+                  <a class="" href="#">new</a>
+                  <a class="" href="#">edit</a>
+                  <a class="" href="#">delete</a>
+
               </div>
-              <ol>
+              </div>
+              <ol class="hide-this">
                 <%@parent_id_two = task.id%>
                 <%@subtasks_two = Task.where(task_id: @parent_id_two)%>
                 <%if @subtasks_two != nil%>
                 <%@subtasks_two.each do |task|%>
                   <li>
-                    <div class="individualTaskWrapLevelThree">
+                    <div class="individualTaskWrapLevelThree individualTaskWrap">
           							<p> List Name:  <%=task.name%></p>
-                            <p>List content:  <%=task.content%></p>
-                            <p>List sequence:  <%=task.sequence%></p>
-                            <p>List due:  <%=task.duedate%></p>
-                            <p>List id:  <%=task.id%></p>
-        <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
-        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
+
+                    <button class="showMoreInfo"> show more </button>
+                    <div class="moreInfo">
+                            <p>comments:  <%=task.content%></p>
+                     
                     </div>
-                    <ol>
+                    <div>
+                      <a class="" href="#">new</a>
+                      <a class="" href="#">edit</a>
+                      <a class="" href="#">delete</a>
+                    </div>
+
+                    </div>
+                    <ol class="hide-this">
                       <%@parent_id_three = task.id%>
                       <%@subtasks_three = Task.where(task_id: @parent_id_three)%>
                       <%if @subtasks_three != nil%>
                         <%@subtasks_three.each do |task|%>
                           <li>
-                            <div class="individualTaskWrapLevelFour">
+                            <div class="individualTaskWrapLevelFour individualTaskWrap">
                   							<p> List Name:  <%=task.name%></p>
-                                    <p>List content:  <%=task.content%></p>
-                                    <p>List sequence:  <%=task.sequence%></p>
-                                    <p>List due:  <%=task.duedate%></p>
-                                    <p>List id:  <%=task.id%></p>
-         <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
-        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
+
+                                <button class="showMoreInfo"> show more </button>
+                                <div class="moreInfo">
+                                    <p>Comments:  <%=task.content%></p>
+                                </div>
+                                <div>
+                                <a class="" href="#">new</a>
+                                <a class="" href="#">edit</a>
+                                <a class="" href="#">delete</a>
+                              </div>
                             </div>
                           </li>
                         <%end%>
@@ -76,6 +90,7 @@
 
 <div id="timeline-frame">
   <div class="scrollbar">
+
   	<div class="handle"></div>
   </div>
    <div class="frame">
@@ -93,9 +108,52 @@
     	</ul>
   </div>
 </div>
+
+<script>
+console.log('toggle-lists.js connected');
+
+const targets = document.getElementsByClassName('listFrameContainer');
+const lis = document.getElementsByTagName('li');
+const showMoreButtons = document.getElementsByClassName('showMoreInfo');
+
+function hide(e) {
+  const { nextElementSibling } = e.target;
+
+  if (nextElementSibling && nextElementSibling.classList.contains('hide-this')) {
+    setTimeout(() => {
+      nextElementSibling.classList.toggle('hidden');
+      e.target.classList.toggle('has-children');
+    }, 0);
+  }
+}
+
+function showMore(e) {
+  const { nextElementSibling } = e.target;
+
+  if (nextElementSibling && nextElementSibling.classList.contains('moreInfo')) {
+    setTimeout(() => {
+      nextElementSibling.classList.toggle('hidden');
+      nextElementSibling.classList.toggle('show-animate');
+    }, 0);
+  }
+}
+
+for (let i = 0; i < showMoreButtons.length; i++) {
+  showMoreButtons[i].addEventListener('click', showMore);
+
+}
+
+for (let i = 0; i < targets.length; i++) {
+  targets[i].addEventListener('click', hide);
+}
+
+for (let i = 0; i < lis.length; i++) {
+  lis[i].setAttribute('draggable', 'true');
+}
+
+</script>
 <script>
 console.log('script tag in views/tasks/index linked');
-
 var slyelement = {
   obj: {},
   el: '.frame',

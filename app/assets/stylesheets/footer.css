@@ -1,0 +1,7 @@
+.sticki-do-footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0px;
+  display: flex;
+  align-content: center;
+}
