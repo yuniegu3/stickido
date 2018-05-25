@@ -1,6 +1,6 @@
 /* styles needed to toggle the nested task view */
 
-li {
+/* li {
   cursor: pointer !important;
 }
 
@@ -12,15 +12,15 @@ li {
   border-bottom: 10px solid purple !important;
 }
 
-.show-animate {
+.show-animate { */
   /* animation-name: fadeIn;
-  animation-duration: 1s; */
+  animation-duration: 1s; 
 }
 
 /* .hide-this {
     cursor: pointer;
   }
-  
+
   .hide-this > * {
     cursor: auto;
   } */

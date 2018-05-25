@@ -24,56 +24,59 @@ require 'faker'
 end
 
 # create tasks to belong to each of the projects that were made
+
 @project_ids.each do |project_id|
-    @level_one_sequence = 1
-    1.times do
+
+    5.times do
         @task = Task.create(
             name:Faker::Hipster.word,
             content:Faker::Hipster.sentence(2),
-            sequence: @level_one_sequence,
             project_id: project_id,
             task_id: nil,
             duedate: Faker::Date.forward(7)
         )
-        @level_one_sequence += 1
         # create sub-tasks for the parent task
-        @parent_task_id_one_deep = @task.id
-        @level_two_sequence = 1
-        1.times do
+
+          end
+            5.times do
+                @task = Task.create(
+                    name:Faker::Hipster.word,
+                    content:Faker::Hipster.sentence(2),
+                    task_id: 1,
+                    project_id: project_id
+                )
+        end
+        5.times do
             @task = Task.create(
                 name:Faker::Hipster.word,
                 content:Faker::Hipster.sentence(2),
-                sequence: @level_two_sequence,
-                task_id: @parent_task_id_one_deep,
+                task_id: 2,
                 project_id: project_id
             )
-            @level_two_sequence += 1
-            @parent_task_id = @task.id
-            @level_three_sequence = 1
-            1.times do
-                @task = Task.create(
-                name:Faker::Hipster.word,
-                content:Faker::Hipster.sentence(2),
-                sequence: @level_three_sequence,
-                task_id: @parent_task_id,
-                project_id: project_id
-                )
-                @parent_task_id_three_deep = @task.id
-                @level_four_sequence = 1
-
-                3.times do
-                    @task = Task.create(
-                        name:Faker::Hipster.word,
-                        content:Faker::Hipster.sentence(2),
-                        sequence: @level_four_sequence,
-                        task_id: @parent_task_id_three_deep,
-                        project_id: project_id
-                        )
-                    @level_four_sequence += 1
-                end
-                @level_three_sequence += 1
-            end
-        end
+    end
+    5.times do
+        @task = Task.create(
+            name:Faker::Hipster.word,
+            content:Faker::Hipster.sentence(2),
+            task_id: 3,
+            project_id: project_id
+        )
+    end
+    5.times do
+        @task = Task.create(
+            name:Faker::Hipster.word,
+            content:Faker::Hipster.sentence(2),
+            task_id: 4,
+            project_id: project_id
+        )
+    end
+    5.times do
+        @task = Task.create(
+            name:Faker::Hipster.word,
+            content:Faker::Hipster.sentence(2),
+            task_id: 5,
+            project_id: project_id
+        )
     end
 end
 

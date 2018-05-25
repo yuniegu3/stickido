@@ -1,19 +1,19 @@
 /* page outter frame: */
-#taskFrame {
+/* #taskFrame { */
   /* border: dotted magenta 5px; */
-  overflow-y: hidden;
-}
+  /* overflow-y: hidden;
+} */
 
-#taskFrameInnerWrap {
+/* #taskFrameInnerWrap { */
   /* border: dotted 10px turquoise; */
-  width: 20000px;
+  /* width: 20000px;
   height: 100vh;
   display: inline-block;
-}
+} */
 
 /* Main list Wrap: */
 
-.listFrameContainer {
+/* .listFrameContainer {
   border: dotted gray 1px;
   border-radius: 15px;
   float: left;
@@ -24,75 +24,75 @@
   max-width: 15vw;
   min-width: 300px;
   margin-left: 1.5rem;
-}
+} */
 
 /* all of the taskWraps */
-.individualTaskWrap {
+/* .individualTaskWrap { */
   /* background-color: pink; */
-  max-width: 13vw;
+  /* max-width: 13vw;
 }
 
 .individualTaskWrap p {
   margin: 0px;
   line-height: 1rem;
-}
+} */
 
 /* Main tasks: */
-.individualTaskWrapLevelOne {
+/* .individualTaskWrapLevelOne {
   border: solid yellowgreen 5px;
   padding: 0.25rem;
-}
+} */
 
 /* Level two nested tasks: */
-.individualTaskWrapLevelTwo {
-  border: dotted gray 2px;
+/* .individualTaskWrapLevelTwo {
+  border: dotted gray 2px; */
   /* background-image: url("/assets/images/glass_button.png"); */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 /* Level three nested tasks: */
-.individualTaskWrapLevelThree {
+/* .individualTaskWrapLevelThree {
   border: dotted rgb(15, 235, 242) 2px;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
-/* Level three nested tasks: */
+/* Level three nested tasks:
 .individualTaskWrapLevelFour {
   border: dotted rgb(57, 15, 242) 5px;
-  /* background-image: url("/assets/images/glass_button.png"); */
+  background-image: url("/assets/images/glass_button.png");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 /* taks wraps on all of the levels */
-.individualTaskWrap {
+/* .individualTaskWrap {
   border: solid blue 5px;
   border-radius: 1rem;
   margin: 1rem;
   padding: 0.5em;
-}
+} */
 
 /* Timeline: */
 /* my lost timeline frame: */
-#timeLineFrame {
+/* #timeLineFrame {
   height: 20px;
   border: dotted blue 5px;
   position: fixed;
   bottom: 0px;
   width: 100vw;
   display: flex;
-}
+} */
 
 /* Buttons */
 
-a {
+/* a {
   float: right;
-}
+} */
 
 /* Show and hide containers */
-.showMoreInfo {
+/* .showMoreInfo {
   border: magenta 2px solid;
 }
 .moreInfo {
@@ -107,4 +107,4 @@ a {
   height: 80vh;
   overflow-y: scroll;
   background-image: image-url("glass_buttons.png");
-}
+} */

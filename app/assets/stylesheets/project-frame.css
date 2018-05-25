@@ -1,19 +1,19 @@
 /* SCREEN FRAME */
-#screenFrame {
+/* #screenFrame {
   height: 100vh;
-  width: 100vw;
+  width: 100vw; */
   /* padding making up for the size of the header */
-  padding-top: 3rem;
-}
+  /* padding-top: 3rem;
+} */
 
 /* make the scrollbars invisible, so we can customize */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   height: 0px;
   width: 0px;
-}
+} */
 
 /* HEADER FRAME */
-header {
+/* header {
   width: 100vw;
   height: 3rem;
   position: fixed;
@@ -36,21 +36,21 @@ header h5 {
 
 .viewSelector {
   padding: 0.5rem;
-}
+} */
 
 /* PAGE FRAME (contains the stickiFrame and the listFrame */
 
-#pageFrame {
+/* #pageFrame {
   height: 100%;
-  width: 100%;
+  width: 100%; */
   /* border: dotted orange 5px; */
-  display: flex;
+  /* display: flex;
   z-index: 5;
-}
+} */
 
 /* STICKI FRAME: */
 
-#stickiFrame {
+/* #stickiFrame {
   border: solid blue 3px;
   overflow-x: scroll;
   overflow-y: scroll;
@@ -77,24 +77,24 @@ header h5 {
   position: absolute;
   width: 100px;
   border: solid yellow 1px;
-}
+} */
 
 /* LIST FRAME */
 
-#listFrame {
+/* #listFrame {
   display: inline;
   overflow-x: scroll;
 }
 
 #listFrameInnerWrap {
-  width: 3000px; /* make this width grow on user clicks  */
+  width: 3000px;
   display: flex;
   background-color: gray;
   border: dotted orange 3px;
-  height: 100%; /*limit height to preserve scroll*/
-}
+  height: 100%;
+} */
 
-.listWrap {
+/* .listWrap {
   float: left;
   width: 20vw;
   min-width: 150px;
@@ -103,11 +103,11 @@ header h5 {
   border: dotted aqua 1px;
   color: white;
   overflow-y: scroll;
-}
+} */
 
 /* TIMELINE FRAME */
 
-#timelineFrame {
+/* #timelineFrame {
   border: orange dotted 3px;
   position: fixed;
   bottom: 0px;
@@ -124,14 +124,14 @@ header h5 {
 }
 .timeDash {
   color: pink;
-}
+} */
 
 /* at very small screen size, the
 sticki-frame and the list-frame
 are the same height as the screen.
 you can scroll to see the bottom one
 or click to change which is on top */
-@media all and (max-width: 600px) {
+/* @media all and (max-width: 600px) {
   #pageFrame {
     height: 180vh;
   }
@@ -152,9 +152,9 @@ or click to change which is on top */
   #pageFrame {
     margin-left: 1rem;
   }
-}
+} */
 
-@media all and (min-width: 601px) and (max-width: 850px) {
+/* @media all and (min-width: 601px) and (max-width: 850px) {
   #timelineFrame {
     height: 100vh;
     width: 2rem;
@@ -165,13 +165,13 @@ or click to change which is on top */
   #pageFrame {
     margin-left: 2rem;
   }
-}
+} */
 /* WORKING HERE */
 /* Medium devices (tablets, 768px and up) */
 
 /* CLASSES CHANGED IN JS TO CHANGE THE VIEW OPTION: */
 /* CLASSES FOR THE ROW VIEW: */
-.rowFrame {
+/* .rowFrame {
   flex-direction: column;
 }
 .rowFrameReverse {
@@ -179,9 +179,9 @@ or click to change which is on top */
 }
 .rowItem {
   height: 100%;
-}
+} */
 /* CLASSES FOR THE COLUMN VIEW: */
-.columnFrame {
+/* .columnFrame {
   flex-direction: row;
 }
 .columnFrameReverse {
@@ -189,4 +189,4 @@ or click to change which is on top */
 }
 .columnItem {
   height: 100vh;
-}
+} */
