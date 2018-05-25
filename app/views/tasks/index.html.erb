@@ -1,113 +1,56 @@
 <div id="myModal"></div>
 <%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-outline-primary" %>
 <button class="showalltasks btn btn-outline-primary">Show All Tasks</button>
+<a class="btn btn-outline-primary" href="#">new</a>
 
-<div id="taskFrame">
-<div id="taskFrameInnerWrap">
-<a class="" href="#">new</a>
-  <% @tasks.each do |task|%>
-    <div class="<%= task.duedate %> listFrameContainer">
-      <div class="individualTaskWrapLevelOne individualTaskWrap">
-        <p id="listTitle"> Get <%=task.name%> done</p>
-         <a class="" href="#">edit</a>
-         <a class="" href="#">delete</a>
-      </div>
-      <ol class="listFrame hide-this">
-        <%@parent_id_one = task.id%>
-        <%@subtasks_one = Task.where(task_id: @parent_id_one)%>
-        <%if @subtasks_one != nil%>
-          <%@subtasks_one.each do |task|%>
-            <li>
-              <div class="individualTaskWrapLevelTwo individualTaskWrap">
-        					<p> List Name:  <%=task.name%></p>
-                  <button class="showMoreInfo"> show more </button>
-                  <div class="moreInfo">
-                  <p>List content:  <%=task.content%></p>
-                </div>
-                <div>
-                  <a class="" href="#">new</a>
-                  <a class="" href="#">edit</a>
-                  <a class="" href="#">delete</a>
-
-              </div>
-              </div>
-              <ol class="hide-this">
-                <%@parent_id_two = task.id%>
-                <%@subtasks_two = Task.where(task_id: @parent_id_two)%>
-                <%if @subtasks_two != nil%>
-                <%@subtasks_two.each do |task|%>
-                  <li>
-                    <div class="individualTaskWrapLevelThree individualTaskWrap">
-          							<p> List Name:  <%=task.name%></p>
-
-                    <button class="showMoreInfo"> show more </button>
-                    <div class="moreInfo">
-                            <p>comments:  <%=task.content%></p>
-                     
-                    </div>
-                    <div>
-                      <a class="" href="#">new</a>
-                      <a class="" href="#">edit</a>
-                      <a class="" href="#">delete</a>
-                    </div>
-
-                    </div>
-                    <ol class="hide-this">
-                      <%@parent_id_three = task.id%>
-                      <%@subtasks_three = Task.where(task_id: @parent_id_three)%>
-                      <%if @subtasks_three != nil%>
-                        <%@subtasks_three.each do |task|%>
-                          <li>
-                            <div class="individualTaskWrapLevelFour individualTaskWrap">
-                  							<p> List Name:  <%=task.name%></p>
-
-                                <button class="showMoreInfo"> show more </button>
-                                <div class="moreInfo">
-                                    <p>Comments:  <%=task.content%></p>
-                                </div>
-                                <div>
-                                <a class="" href="#">new</a>
-                                <a class="" href="#">edit</a>
-                                <a class="" href="#">delete</a>
-                              </div>
-                            </div>
-                          </li>
-                        <%end%>
-                      <%end%>
-                    </ol>
-                  </li>
-                <%end%>
-              </ol>
-              <%end%>
-            </li>
-          <%end%>
-        <%end%>
-      </ol>
-    </div>
-  <% end %>
-</div>
-</div>
-
-<div id="timeline-frame">
+<div class="" id="timeLineFrame">
   <div class="scrollbar">
 
-  	<div class="handle"></div>
+    <div class="handle"></div>
   </div>
-   <div class="frame">
-    	<ul class="slidee">
-        <% @duedates.each do |d| %>
-        <li class="timelinesection border" id="<%= d.duedate %>"><%= d.duedate %></li>
-        <script>
-          $(`#<%= d.duedate %>`).click(function(){
-            let target = '<%= d.duedate %>';
-            $(`.${target}`).show();
-            $(`.${target}`).siblings().hide();
-          });
-        </script>
-        <% end %>
-    	</ul>
+  <div class="frame">
+    <ul class="slidee">
+      <% @duedates.each do |d| %>
+      <li class="timelinesection border" id="<%= d.duedate %>"><%= d.duedate %></li>
+      <script>
+      $(`#<%= d.duedate %>`).click(function(){
+        let target = '<%= d.duedate %>';
+        $(`.${target}`).show();
+        $(`.listFrameContainer`).not(`.${target}`).hide();
+      });
+      </script>
+      <% end %>
+    </ul>
   </div>
 </div>
+
+<div class="d-flex flex-wrap">
+  <% @tasks.each do |task|%>
+  <div class="<%= task.duedate %> listFrameContainer card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%=task.name%></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Due: <%= task.duedate %></h6>
+      <p class="card-text"><%= task.content %></p>
+      <ul class="list-group border list-group-flush">
+        <div class="card-header">
+          Subtasks
+        </div>
+      <%@parent_id_one = task.id%>
+      <%@subtasks_one = Task.where(task_id: @parent_id_one)%>
+      <%if @subtasks_one != nil%>
+        <%@subtasks_one.each do |t|%>
+        <li class="list-group-item"><%= t.name %></li>
+        <% end %>
+      <% end %>
+      </ul>
+      <a href="#" class="card-link">Edit</a>
+      <a href="#" class="card-link">Delete</a>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
 
 <script>
 console.log('toggle-lists.js connected');

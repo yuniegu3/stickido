@@ -1,7 +1,7 @@
-#landing-page-sign-in-wrap {
-  width: 20vw;
+/* #landing-page-sign-in-wrap {
+  width: 20vw; */
   /* border: solid blue 2px; */
-  margin: auto;
+  /* margin: auto;
   text-align: center;
   height: 800px;
   display: flex;
@@ -41,9 +41,9 @@
 .stickido {
 }
 
-#sign-in-buttons-wrap {
+#sign-in-buttons-wrap { */
   /* border: solid green 2px; */
-  width: 30%;
+  /* width: 30%;
 
   display: flex;
   justify-content: space-between;
@@ -52,4 +52,4 @@
 #sign-in-buttons-wrap a {
   border: solid purple 1px;
   padding: 1rem;
-}
+} */
