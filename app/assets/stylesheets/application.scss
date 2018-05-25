@@ -12,7 +12,7 @@
  *
  * require_tree .
  * require animate
- *=require reset
+ * require reset
  *= require pages
  *= require bootstrap
  *= require project-frame
@@ -20,6 +20,7 @@
  *= require gridstack
  *= require timeline
  *= require tasks
- *= require list-frames
+ *= require task-frames
+ *= require task-items
  *= require_self
  */

@@ -1,0 +1,84 @@
+/* page outter frame: */
+#taskFrame {
+  border: dotted magenta 5px;
+  overflow-y: hidden;
+}
+
+#taskFrameInnerWrap {
+  border: dotted 10px turquoise;
+  width: 20000px;
+  height: 100vh;
+  display: inline-block;
+}
+
+/* Main list Wrap: */
+
+.listFrameContainer {
+  border: dotted gray 1px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
+  padding: 1rem;
+  height: 90vh;
+}
+
+/* Main tasks: */
+.individualTaskWrapLevelOne {
+  border: solid yellowgreen 5px;
+  padding: 0.25rem;
+}
+/* Level two nested tasks: */
+
+.individualTaskWrapLevelTwo {
+  border: dotted gray 2px;
+  /* background-image: url("/assets/images/glass_button.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Level three nested tasks: */
+.individualTaskWrapLevelThree {
+  border: dotted rgb(15, 235, 242) 2px;
+  /* background-image: url("/assets/images/glass_button.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Level three nested tasks: */
+.individualTaskWrapLevelFour {
+  border: dotted rgb(15, 235, 242) 2px;
+  /* background-image: url("/assets/images/glass_button.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Timeline: */
+/* my lost timeline frame: */
+#timeLineFrame {
+  height: 20px;
+  border: dotted blue 5px;
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  display: flex;
+}
+
+/* Buttons */
+
+/* Show and hide containers */
+.showMoreInfo {
+  border: magenta 2px solid;
+}
+.moreInfo {
+  border: magenta 2px solid;
+}
+
+.listFrame {
+  border: solid black 2px;
+  overflow-y: scroll;
+  width: 500px;
+  float: left;
+  height: 80vh;
+  overflow-y: scroll;
+  background-image: image-url("glass_buttons.png");
+}

@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 # project_tasks GET   /projects/:project_id/tasks(.:format)  tasks#index
 	def index
 		@project = Project.find(params[:project_id])
-		@tasks = @project.tasks
+		@tasks = @project.tasks.limit(10)
 		@duedates = Task.select(:duedate).where.not(duedate: nil).distinct.order(duedate: 'ASC') 
 	end
 

@@ -1,11 +1,13 @@
 
 <div id="taskFrame">
 <div id="taskFrameInnerWrap">
+<a class="" href="#">new</a>
   <% @tasks.each do |task|%>
     <div class="listFrameContainer">
       <div class="individualTaskWrapLevelOne">
         <p> Get <%=task.name%> done</p>
-           
+         <a class="" href="#">edit</a>
+         <a class="" href="#">delete</a>
       </div>
       <ol class="listFrame">
         <%@parent_id_one = task.id%>
@@ -15,12 +17,18 @@
             <li>
               <div class="individualTaskWrapLevelTwo">
         					<p> List Name:  <%=task.name%></p>
-                
+                  <button class="showMoreInfo"> show more </button>
+                  <div class="moreInfo">
                      <p>List content:  <%=task.content%></p>
                      <p>List sequence:  <%=task.sequence%></p>
                      <p>List due:  <%=task.duedate%></p>
                      <p>List id:  <%=task.id%></p>
-                
+                </div>
+                <div>
+                  <a class="" href="#">new</a>
+                  <a class="" href="#">edit</a>
+                  <a class="" href="#">delete</a>
+              </div>
               </div>
               <ol>
                 <%@parent_id_two = task.id%>
@@ -30,10 +38,18 @@
                   <li>
                     <div class="individualTaskWrapLevelThree">
           							<p> List Name:  <%=task.name%></p>
+                    <button class="showMoreInfo"> show more </button>
+                    <div class="moreInfo">
                             <p>List content:  <%=task.content%></p>
                             <p>List sequence:  <%=task.sequence%></p>
                             <p>List due:  <%=task.duedate%></p>
                             <p>List id:  <%=task.id%></p>
+                    </div>
+                    <div>
+                      <a class="" href="#">new</a>
+                      <a class="" href="#">edit</a>
+                      <a class="" href="#">delete</a>
+                    </div>
                     </div>
                     <ol>
                       <%@parent_id_three = task.id%>
@@ -43,10 +59,18 @@
                           <li>
                             <div class="individualTaskWrapLevelFour">
                   							<p> List Name:  <%=task.name%></p>
+                                <button class="showMoreInfo"> show more </button>
+                                <div class="moreInfo">
                                     <p>List content:  <%=task.content%></p>
                                     <p>List sequence:  <%=task.sequence%></p>
                                     <p>List due:  <%=task.duedate%></p>
                                     <p>List id:  <%=task.id%></p>
+                                </div>
+                                <div>
+                                <a class="" href="#">new</a>
+                                <a class="" href="#">edit</a>
+                                <a class="" href="#">delete</a>
+                              </div>
                             </div>
                           </li>
                         <%end%>
