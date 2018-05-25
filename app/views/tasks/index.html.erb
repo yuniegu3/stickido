@@ -1,5 +1,6 @@
 <div id="myModal"></div>
-<%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-primary" %>
+<%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-outline-primary" %>
+<button class="showalltasks btn btn-outline-primary">Show All Tasks</button>
 
 <div id="taskFrame">
 <div id="taskFrameInnerWrap">
@@ -84,7 +85,8 @@
         <script>
           $(`#<%= d.duedate %>`).click(function(){
             let target = '<%= d.duedate %>';
-            $(`.${target}`).siblings().toggle();
+            $(`.${target}`).show();
+            $(`.${target}`).siblings().hide();
           });
         </script>
         <% end %>
@@ -107,7 +109,7 @@ var slyelement = {
     touchDragging: 1,
     releaseSwing: 1,
     startAt: 0,
-    scrollBy: 1,
+    scrollBy: 0,
     speed: 300,
     elasticBounds: 1,
     easing: 'swing', // easeInOutElastic, easeOutBounce
@@ -124,4 +126,8 @@ $(function(){
 $(window).resize(function(e) {
   slyelement.obj.reload();
 });
+
+$('.showalltasks').click(function(){
+  $('.listFrameContainer').show();
+})
 </script>
