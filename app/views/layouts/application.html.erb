@@ -12,32 +12,35 @@
   <body>
     <nav class="header">
 
-
-
-
-
-     
-        <a class="" href="/">Stickido</a>
-
-
-        <% if user_signed_in? %>
-
-            <%if @page_location != "projects"%>
-                  <a class="" href="/projects" data-turbolinks="false">all my projects</a>
-                <%end%>
-              
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "") %>
-        <% else %>
-          <a class="" href="users/sign_up">Sign Up</a>
-          <%= link_to('Login', new_user_session_path, class: "") %>
+    <%if @page_location != "landing"%>
+        <a class="title-button" href="/">Stickido</a>
         <% end %>
-      
-      
-      
-      
-      
-      
-      
+        <% if user_signed_in? %>
+            <%if @page_location != "projects"%>
+
+
+                  <a class="" href="/projects" data-turbolinks="false">all my projects</a>
+
+
+                <%end%>
+
+
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "") %>
+
+
+          <% else %>
+
+              <%if @page_location != "landing"%>
+              <a class="" href="users/sign_up">Sign Up</a>
+
+
+              <%= link_to('Login', new_user_session_path, class: "") %>
+
+
+            <% end %>
+          <% end %>
+
+
     </nav>
 
       <%= yield %>

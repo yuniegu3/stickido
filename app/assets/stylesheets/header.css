@@ -1,4 +1,4 @@
-/* .header {
+.header {
   height: 10vh;
   border: solid orange 3px;
 }
@@ -8,5 +8,8 @@
 }
 
 .title-button {
-  font-size: 3rem;
-} */
+  font-size: 5rem;
+  position: absolute;
+  margin: auto;
+  left: calc(50vw);
+}
