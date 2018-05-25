@@ -3,9 +3,9 @@ class TasksController < ApplicationController
 
 # project_tasks GET   /projects/:project_id/tasks(.:format)  tasks#index
 	def index
-		@project = Project.find(params[:project_id])
-		@tasks = @project.tasks.limit(10)
-		@duedates = Task.select(:duedate).where.not(duedate: nil).distinct.order(duedate: 'ASC') 
+		@project = Project.find_by('user_id = ? AND id = ?', current_user.id, params[:project_id])
+		@tasks = @project.tasks
+		@duedates = Task.select(:duedate).where(project_id: @project.id).distinct.order(duedate: 'ASC')
 	end
 
 # project_task GET   /projects/:project_id/tasks/:id(.:format)  tasks#show

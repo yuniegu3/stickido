@@ -46,7 +46,7 @@ end
                 content:Faker::Hipster.sentence(2),
                 sequence: @level_two_sequence,
                 task_id: @parent_task_id_one_deep,
-                project_id: nil
+                project_id: project_id
             )
             @level_two_sequence += 1
             @parent_task_id = @task.id
@@ -57,7 +57,7 @@ end
                 content:Faker::Hipster.sentence(2),
                 sequence: @level_three_sequence,
                 task_id: @parent_task_id,
-                project_id: nil
+                project_id: project_id
                 )
                 @parent_task_id_three_deep = @task.id
                 @level_four_sequence = 1
@@ -67,7 +67,7 @@ end
                         content:Faker::Hipster.sentence(2),
                         sequence: @level_four_sequence,
                         task_id: @parent_task_id_three_deep,
-                        project_id: nil
+                        project_id: project_id
                         )
                     @level_four_sequence += 1
                 end
@@ -87,3 +87,5 @@ end
         )
     end
 end
+
+Project.create(name: "subtask holder", user_id: 1, id: 10000)

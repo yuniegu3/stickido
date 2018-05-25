@@ -1,22 +1,18 @@
 <h1> all my sticki notes </h1>
 
-
 <%= link_to "Create New Sticki", new_project_sticki_path, remote: true, class: "btn btn-primary" %>
-
 
 <div id="myModal"></div>
 
 <div class="grid-stack" id="my-stickis">
-    <% @x = 0 %>
-    <% @stickis.each do |sticki| %>
-  <%= render sticki %>
-
+  <% @x = 0 %>
+  <% @stickis.each do |sticki| %>
+    <%= render sticki %>
       <% if @x == 10 %>
-        <% @x -= 10 %>             
+        <% @x -= 10 %>
       <% else %>
         <% @x += 2 %>
       <% end %>
     <% end %>
 </div>
 <br>
-

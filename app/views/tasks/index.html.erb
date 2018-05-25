@@ -1,9 +1,13 @@
+<div id="myModal"></div>
+<%= link_to "Create Main Task", new_project_task_path, remote: true, class: "btn btn-outline-primary" %>
+<button class="showalltasks btn btn-outline-primary">Show All Tasks</button>
 
 <div id="taskFrame">
 <div id="taskFrameInnerWrap">
 <a class="" href="#">new</a>
   <% @tasks.each do |task|%>
-    <div class="listFrameContainer">
+
+    <div class="<%= task.duedate %> listFrameContainer">
       <div class="individualTaskWrapLevelOne individualTaskWrap">
         <p id="listTitle"> Get <%=task.name%> done</p>
          <a class="" href="#">edit</a>
@@ -25,6 +29,7 @@
                   <a class="" href="#">new</a>
                   <a class="" href="#">edit</a>
                   <a class="" href="#">delete</a>
+
               </div>
               </div>
               <ol class="hide-this">
@@ -35,6 +40,7 @@
                   <li>
                     <div class="individualTaskWrapLevelThree individualTaskWrap">
           							<p> List Name:  <%=task.name%></p>
+
                     <button class="showMoreInfo"> show more </button>
                     <div class="moreInfo">
                             <p>comments:  <%=task.content%></p>
@@ -45,6 +51,7 @@
                       <a class="" href="#">edit</a>
                       <a class="" href="#">delete</a>
                     </div>
+
                     </div>
                     <ol class="hide-this">
                       <%@parent_id_three = task.id%>
@@ -54,6 +61,7 @@
                           <li>
                             <div class="individualTaskWrapLevelFour individualTaskWrap">
                   							<p> List Name:  <%=task.name%></p>
+
                                 <button class="showMoreInfo"> show more </button>
                                 <div class="moreInfo">
                                     <p>Comments:  <%=task.content%></p>
@@ -69,7 +77,7 @@
                       <%end%>
                     </ol>
                   </li>
-                <%end%>	
+                <%end%>
               </ol>
               <%end%>
             </li>
@@ -83,18 +91,22 @@
 
 <div id="timeline-frame">
   <div class="scrollbar">
-    <div class="handle"></div>
+
+  	<div class="handle"></div>
   </div>
-  <div class="frame">
-      <ul class="slidee">
+   <div class="frame">
+    	<ul class="slidee">
         <% @duedates.each do |d| %>
-        <li class="border">
-          <p id="timeline-text">
-            <%= d.duedate %>
-          </p>
-        </li>
+        <li class="timelinesection border" id="<%= d.duedate %>"><%= d.duedate %></li>
+        <script>
+          $(`#<%= d.duedate %>`).click(function(){
+            let target = '<%= d.duedate %>';
+            $(`.${target}`).show();
+            $(`.${target}`).siblings().hide();
+          });
+        </script>
         <% end %>
-      </ul>
+    	</ul>
   </div>
 </div>
 
@@ -156,7 +168,7 @@ var slyelement = {
     touchDragging: 1,
     releaseSwing: 1,
     startAt: 0,
-    scrollBy: 1,
+    scrollBy: 0,
     speed: 300,
     elasticBounds: 1,
     easing: 'swing', // easeInOutElastic, easeOutBounce
@@ -173,4 +185,8 @@ $(function(){
 $(window).resize(function(e) {
   slyelement.obj.reload();
 });
+
+$('.showalltasks').click(function(){
+  $('.listFrameContainer').show();
+})
 </script>

@@ -5,8 +5,13 @@
     <%= f.text_field :content, id: :task_content, required: true %>
     <%= f.number_field :sequence, id: :task_sequence %>
     <%= f.text_field :duedate, id: :task_duedate %>
+    <% if @task.task.id != nil %>
+    <%= f.number_field :project_id, value: 10000 %>
+
+   	<% else %>
     <%= f.number_field :project_id, id: :task_project_id %>
     <%= f.number_field :task_id, id: :task_task_id%>
+    <% end %>
     <%= f.submit %>
 <% end %>
 
