@@ -1,11 +1,11 @@
 /* page outter frame: */
 #taskFrame {
-  border: dotted magenta 5px;
+  /* border: dotted magenta 5px; */
   overflow-y: hidden;
 }
 
 #taskFrameInnerWrap {
-  border: dotted 10px turquoise;
+  /* border: dotted 10px turquoise; */
   width: 20000px;
   height: 100vh;
   display: inline-block;
@@ -15,11 +15,26 @@
 
 .listFrameContainer {
   border: dotted gray 1px;
+  border-radius: 15px;
   float: left;
-  margin-left: 20px;
+
   margin-top: 30px;
-  padding: 1rem;
+  padding: 0.5rem;
   height: 90vh;
+  max-width: 15vw;
+  min-width: 300px;
+  margin-left: 1.5rem;
+}
+
+/* all of the taskWraps */
+.individualTaskWrap {
+  background-color: pink;
+  max-width: 13vw;
+}
+
+.individualTaskWrap p {
+  margin: 0px;
+  line-height: 1rem;
 }
 
 /* Main tasks: */
@@ -27,8 +42,8 @@
   border: solid yellowgreen 5px;
   padding: 0.25rem;
 }
-/* Level two nested tasks: */
 
+/* Level two nested tasks: */
 .individualTaskWrapLevelTwo {
   border: dotted gray 2px;
   /* background-image: url("/assets/images/glass_button.png"); */
@@ -39,17 +54,21 @@
 /* Level three nested tasks: */
 .individualTaskWrapLevelThree {
   border: dotted rgb(15, 235, 242) 2px;
-  /* background-image: url("/assets/images/glass_button.png"); */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 /* Level three nested tasks: */
 .individualTaskWrapLevelFour {
-  border: dotted rgb(15, 235, 242) 2px;
+  border: dotted rgb(57, 15, 242) 5px;
   /* background-image: url("/assets/images/glass_button.png"); */
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* taks wraps on all of the levels */
+.individualTaskWrap {
+  border: solid blue 5px;
 }
 
 /* Timeline: */
@@ -64,6 +83,10 @@
 }
 
 /* Buttons */
+
+a {
+  float: right;
+}
 
 /* Show and hide containers */
 .showMoreInfo {

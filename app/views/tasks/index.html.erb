@@ -4,8 +4,8 @@
 <a class="" href="#">new</a>
   <% @tasks.each do |task|%>
     <div class="listFrameContainer">
-      <div class="individualTaskWrapLevelOne">
-        <p> Get <%=task.name%> done</p>
+      <div class="individualTaskWrapLevelOne individualTaskWrap">
+        <p id="listTitle"> Get <%=task.name%> done</p>
          <a class="" href="#">edit</a>
          <a class="" href="#">delete</a>
       </div>
@@ -15,14 +15,11 @@
         <%if @subtasks_one != nil%>
           <%@subtasks_one.each do |task|%>
             <li>
-              <div class="individualTaskWrapLevelTwo">
+              <div class="individualTaskWrapLevelTwo individualTaskWrap">
         					<p> List Name:  <%=task.name%></p>
                   <button class="showMoreInfo"> show more </button>
                   <div class="moreInfo">
                      <p>List content:  <%=task.content%></p>
-                     <p>List sequence:  <%=task.sequence%></p>
-                     <p>List due:  <%=task.duedate%></p>
-                     <p>List id:  <%=task.id%></p>
                 </div>
                 <div>
                   <a class="" href="#">new</a>
@@ -36,7 +33,7 @@
                 <%if @subtasks_two != nil%>
                 <%@subtasks_two.each do |task|%>
                   <li>
-                    <div class="individualTaskWrapLevelThree">
+                    <div class="individualTaskWrapLevelThree individualTaskWrap">
           							<p> List Name:  <%=task.name%></p>
                     <button class="showMoreInfo"> show more </button>
                     <div class="moreInfo">
@@ -57,7 +54,7 @@
                       <%if @subtasks_three != nil%>
                         <%@subtasks_three.each do |task|%>
                           <li>
-                            <div class="individualTaskWrapLevelFour">
+                            <div class="individualTaskWrapLevelFour individualTaskWrap">
                   							<p> List Name:  <%=task.name%></p>
                                 <button class="showMoreInfo"> show more </button>
                                 <div class="moreInfo">
