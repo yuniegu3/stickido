@@ -3,8 +3,11 @@ class TasksController < ApplicationController
 
 # project_tasks GET   /projects/:project_id/tasks(.:format)  tasks#index
 	def index
-		@project = Project.find(params[:project_id])
-		@tasks = @project.tasks
+		@project = Project.find(params[:project_id]) 
+
+		# @tasks = @project.tasks
+		@tasks = Task.where(project_id: @project.id, task_id: nil)
+
 		@duedates = Task.select(:duedate).where.not(duedate: nil).distinct.order(duedate: 'ASC') 
 	end
 
