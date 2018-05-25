@@ -1,4 +1,6 @@
-<h2 class="findTwo">Sign up</h2>
+
+<div id="landing-page-sign-in-wrap">
+<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -24,6 +26,7 @@
   <div class="actions findTwo">
     <%= f.submit "Sign up" %>
   </div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>

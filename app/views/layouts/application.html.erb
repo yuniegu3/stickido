@@ -1,48 +1,34 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
     <title>Stickido</title>
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
+      <link href="product.css" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="header">
-
-    <%if @page_location != "landing"%>
-
-        <a class="title-button" href="/">Stickido</a>
-        <% end %>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+       <span><a class="py-2" href="/">Stickido
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg></a></span>
+        
         <% if user_signed_in? %>
-            <%if @page_location != "projects"%>
-
-
-                  <a class="" href="/projects" data-turbolinks="false">all my projects</a>
-
-
-                <%end%>
-
-
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "") %>
+          <a class="py-2 d-none d-md-inline-block" href="/projects" data-turbolinks="false">My Projects</a>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "py-2 d-none d-md-inline-block") %>
 
 
           <% else %>
 
-              <%if @page_location != "landing" && @page_location != "sign_in"%>
-                <a class="" href="users/sign_up">Sign Up</a>
-
-
-                <%= link_to('Login', new_user_session_path, class: "") %>
-
+                <%= link_to('Sign Up', new_user_registration_path,class: "py-2 d-none d-md-inline-block") %> 
+                <%= link_to('Login', new_user_session_path, class: "py-2 d-none d-md-inline-block") %>
 
             <% end %>
-          <% end %>
-
-
     </nav>
 
       <%= yield %>
