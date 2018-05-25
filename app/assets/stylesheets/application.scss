@@ -31,5 +31,46 @@
  */
 
 body {
-  font-family: "Indie Flower", cursive;
+  // font-family: "Indie Flower", cursive;
+  font-family: "Delius", cursive;
+}
+
+.find {
+  color: magenta;
+}
+
+.findOne {
+  color: green;
+}
+
+.findTwo {
+  color: purple;
+}
+
+// timeline styles:
+.scrollbar {
+  height: 1rem;
+  transform: translate(0px, 100px);
+}
+
+.border {
+  background-color: purple;
+  border-radius: 15px;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timeline-text {
+  color: white;
+  font-family: "Delius", cursive;
+  display: inline-block;
+  width: 1rem;
+}
+
+// PROJECTS PAGE:
+.projectPageWrap {
+  width: 40vw;
+  margin: auto;
 }

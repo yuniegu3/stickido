@@ -1,19 +1,21 @@
 <%@page_location = "projects"%>
 
-<h1> my projects </h1><br/>
 
 
-<%= link_to "Create New Project", new_project_path, remote: true, class: "btn btn-primary" %>
+<div class="projectPageWrap">
+  
+    <%= link_to "stickido a new project", new_project_path, remote: true, class: "btn btn-primary" %>
 
 
-<div id="myModal"></div>
+    <h1> my projects </h1>
+    <div id="myModal"></div>
 
-<div id="my-projects">
-<% @projects.each do |project| %>
-      <%= render project %>
-    <% end %>
+    <div id="my-projects">
+    <% @projects.each do |project| %>
+          <%= render project %>
+        <% end %>
+    </div>
+ 
 </div>
-
-<br>
 
 

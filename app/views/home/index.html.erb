@@ -5,9 +5,14 @@
    
       <h1 id="landing-page-title" class="stickido">Stickido</h1>
 
-      <p class="tagline-one">Stickies are fun !</p>
-      <p class="tagline-two">Let's make a project</p>
+     
+      <% if user_signed_in? %>
 
+          <p class="tagline-two">Let's make a project</p>
+          <a class="tagline-two-link" href="/projects" data-turbolinks="false">let's do a project!</a>
+      <%else%>
+        <p class="tagline-one">You dan "sticki" do it !</p>
+      <%end%>
           
 
       <% if user_signed_in? %>
@@ -16,8 +21,8 @@
 
       <% else %>
         <div id="sign-in-buttons-wrap">
-          <a class="btn btn-primary" href="users/sign_up" role="button">Sign Up</a>
-          <%= link_to('Login', new_user_session_path, class: "btn btn-primary") %>
+          <!-- <a class="" href="users/sign_up" role="button">join</a> -->
+          <%= link_to('lets organize', new_user_session_path, class: "") %>
         </div>
       <% end %>
     

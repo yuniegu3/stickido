@@ -82,18 +82,20 @@
 </div>
 
 <div id="timeline-frame">
-<div class="scrollbar">
-	<div class="handle"></div>
-</div>
- <div class="frame">
-  	<ul class="slidee">
-      <% @duedates.each do |d| %>
-      <li class="border">
-        <%= d.duedate %>
-      </li>
-      <% end %>
-  	</ul>
-</div>
+  <div class="scrollbar">
+    <div class="handle"></div>
+  </div>
+  <div class="frame">
+      <ul class="slidee">
+        <% @duedates.each do |d| %>
+        <li class="border">
+          <p id="timeline-text">
+            <%= d.duedate %>
+          </p>
+        </li>
+        <% end %>
+      </ul>
+  </div>
 </div>
 
 <script>
@@ -120,6 +122,7 @@ function showMore(e) {
   if (nextElementSibling && nextElementSibling.classList.contains('moreInfo')) {
     setTimeout(() => {
       nextElementSibling.classList.toggle('hidden');
+      nextElementSibling.classList.toggle('show-animate');
     }, 0);
   }
 }
