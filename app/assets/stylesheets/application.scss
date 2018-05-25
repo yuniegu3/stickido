@@ -28,6 +28,8 @@
  *= require toggle-view
  *= require landing-page
  *= require_self
+ *= require product
+ *= require project
  */
 
 body {
@@ -35,168 +37,168 @@ body {
   font-family: "Delius", cursive;
 }
 
-.find {
-  color: magenta;
-}
+// .find {
+//   color: magenta;
+// }
 
-.findOne {
-  color: green;
-}
+// .findOne {
+//   color: green;
+// }
 
-.findTwo {
-  color: purple;
-}
+// .findTwo {
+//   color: purple;
+// }
 
-// timeline styles:
-.scrollbar {
-  height: 1rem;
-  transform: translate(0px, 100px);
-}
+// // timeline styles:
+// .scrollbar {
+//   height: 1rem;
+//   transform: translate(0px, 100px);
+// }
 
-.border {
-  background-color: purple;
-  border-radius: 15px;
-  margin-left: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .border {
+//   background-color: purple;
+//   border-radius: 15px;
+//   margin-left: 1rem;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-#timeline-text {
-  color: white;
-  font-family: "Delius", cursive;
-  display: inline-block;
-  width: 1rem;
-}
+// #timeline-text {
+//   color: white;
+//   font-family: "Delius", cursive;
+//   display: inline-block;
+//   width: 1rem;
+// }
 
-// PROJECTS PAGE:
-.projectPageWrap {
-  width: 20vw;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
+// // PROJECTS PAGE:
+// .projectPageWrap {
+//   width: 20vw;
+//   margin: auto;
+//   display: flex;
+//   flex-direction: column;
+// }
 
-.btn,
-.btn-primary {
-  background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 0.5rem;
-  border: solid white 2px;
-  color: black;
-  margin: 0.5rem;
-}
+// .btn,
+// .btn-primary {
+//   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   padding: 0.5rem;
+//   border: solid white 2px;
+//   color: black;
+//   margin: 0.5rem;
+// }
 
-.btn,
-.btn-primary:hoveer {
-  color: purple;
-}
+// .btn,
+// .btn-primary:hoveer {
+//   color: purple;
+// }
 
-// edit and delete buttons
+// // edit and delete buttons
 
-.edit-button {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKIFMm5fRz-89p0XEDYPpL93B-0UFOwJhjyRmYCtn5Ip5TtKvs");
-  background-repeat: no-repeat;
+// .edit-button {
+//   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKIFMm5fRz-89p0XEDYPpL93B-0UFOwJhjyRmYCtn5Ip5TtKvs");
+//   background-repeat: no-repeat;
 
-  margin: 0.5rem;
-  background-size: contain;
-  color: rgba(128, 0, 128, 0.011);
-  // border: dotted magenta 1px;
-  transform: translate(30px, 0px);
-}
+//   margin: 0.5rem;
+//   background-size: contain;
+//   color: rgba(128, 0, 128, 0.011);
+//   // border: dotted magenta 1px;
+//   transform: translate(30px, 0px);
+// }
 
-.edit-button:hover {
-  padding: 0.25rem;
-  color: rgba(128, 0, 128, 0.011);
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBpmAOrYa6Tyoaedm_lOyKsTbL6tcail1MxbXpuD69ke6cnFbAtg");
-  // animation-name: tada;
-  // animation-duration: 1s;
-}
+// .edit-button:hover {
+//   padding: 0.25rem;
+//   color: rgba(128, 0, 128, 0.011);
+//   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBpmAOrYa6Tyoaedm_lOyKsTbL6tcail1MxbXpuD69ke6cnFbAtg");
+//   // animation-name: tada;
+//   // animation-duration: 1s;
+// }
 
-.delete-button {
-  color: black;
-  margin: 0.5rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: rgba(128, 0, 128, 0.011);
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQvj2Om0zUKAbh2uIusFflX8UMCmMNfDcz1RXpK8WMBNpHACQ");
-  opacity: 0.5;
-  transform: translate(20px, 0px);
-}
+// .delete-button {
+//   color: black;
+//   margin: 0.5rem;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   color: rgba(128, 0, 128, 0.011);
+//   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQvj2Om0zUKAbh2uIusFflX8UMCmMNfDcz1RXpK8WMBNpHACQ");
+//   opacity: 0.5;
+//   transform: translate(20px, 0px);
+// }
 
-.delete-button:hover {
-  color: white;
-  margin: 0.5rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: rgba(128, 0, 128, 0);
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQvj2Om0zUKAbh2uIusFflX8UMCmMNfDcz1RXpK8WMBNpHACQ");
-  opacity: 1;
-  // animation-name: shake;
-  // animation-duration: 1s;
-}
+// .delete-button:hover {
+//   color: white;
+//   margin: 0.5rem;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   color: rgba(128, 0, 128, 0);
+//   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQvj2Om0zUKAbh2uIusFflX8UMCmMNfDcz1RXpK8WMBNpHACQ");
+//   opacity: 1;
+//   // animation-name: shake;
+//   // animation-duration: 1s;
+// }
 
-// stickies and projects buttons:
-button {
-  border: none;
-}
-.go-to-stickies {
-  background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
-  background-repeat: no-repeat;
-  // background-size: contain;
-  background-size: 100% 100%;
-  padding: 1rem;
-  border: solid white 2px;
-  color: black;
-  margin: 0.5rem;
-  color: white;
-  transform: translate(50px, 30px) scale(1.5);
-}
+// // stickies and projects buttons:
+// button {
+//   border: none;
+// }
+// .go-to-stickies {
+//   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
+//   background-repeat: no-repeat;
+//   // background-size: contain;
+//   background-size: 100% 100%;
+//   padding: 1rem;
+//   border: solid white 2px;
+//   color: black;
+//   margin: 0.5rem;
+//   color: white;
+//   transform: translate(50px, 30px) scale(1.5);
+// }
 
-.go-to-stickies a {
-  display: inline-block;
-  padding-bottom: 0.25rem;
-}
+// .go-to-stickies a {
+//   display: inline-block;
+//   padding-bottom: 0.25rem;
+// }
 
-.do-new-project {
-  background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
-  background-repeat: no-repeat;
-  // background-size: contain;
-  background-size: 100% 100%;
-  padding: 1rem;
-  border: solid white 2px;
-  color: black;
-  margin: 0.5rem;
-  color: white;
-}
+// .do-new-project {
+//   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
+//   background-repeat: no-repeat;
+//   // background-size: contain;
+//   background-size: 100% 100%;
+//   padding: 1rem;
+//   border: solid white 2px;
+//   color: black;
+//   margin: 0.5rem;
+//   color: white;
+// }
 
-.project-summary-wrap {
-  // border: solid magenta 2px;
-  height: 200px;
-}
+// .project-summary-wrap {
+//   // border: solid magenta 2px;
+//   height: 200px;
+// }
 
-.take-me-to-project {
-  background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width: 100%;
-  background-size: 100% 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-}
+// .take-me-to-project {
+//   background-image: url("http://www.clker.com/cliparts/a/i/P/u/T/5/dark-purple-rectangle.svg");
+//   background-repeat: no-repeat;
+//   background-size: 100% 100%;
+//   width: 100%;
+//   background-size: 100% 100%;
+//   padding: 1rem;
+//   display: flex;
+//   justify-content: center;
+// }
 
-.take-me-to-project a {
-  text-decoration: none;
-  color: white;
-  display: inline-block;
-  flex-grow: 2;
-}
+// .take-me-to-project a {
+//   text-decoration: none;
+//   color: white;
+//   display: inline-block;
+//   flex-grow: 2;
+// }
 
-.project-title-edit-delete {
-  // border: green solid 2px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+// .project-title-edit-delete {
+//   // border: green solid 2px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+// }
