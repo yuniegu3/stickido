@@ -1,5 +1,5 @@
 <%= bootstrap_form_for @project do |f| %>
-    <%= f.text_field :name, id: :project_name %>
+    <%= f.text_field :name, id: :project_name, required: true %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit %>
 <% end %>
