@@ -11,5 +11,9 @@ __Stickido__ lets you organize ideas and tasks by:
 
 **Gems/Frameworks used:** Devise, Faker, Bootstrap, Gridstack, Sly 
 
+Demo Login
+Email: Admin@example.com
+Password: 123456
+
 ## Example
 ![alt text](example/stickido.gif "Stickido example")
