@@ -1,4 +1,5 @@
 <%= bootstrap_form_for(@sticki, url: project_sticki_path(@sticki),html: { method: :put }) do |f| %>
+<%# dont need required for name field, people are able to create stickis without name, just need content %>
   <%= f.text_field :name, id: :sticki_name %>
   <%= f.text_area :content, id: :sticki_content, required: true %>
   <%= f.hidden_field :project_id, :value => @project.id %>
