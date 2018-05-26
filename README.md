@@ -1,5 +1,5 @@
 ## Stickido
-Productivity web app built on Ruby on Rails.
+Productivity web app built on Ruby on Rails by @andrewtabudlo, @yuniegu3, and @maiya-22.
 
 __Stickido__ lets you organize ideas and tasks by:
 
