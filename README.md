@@ -1,25 +1,14 @@
-# README
+## Stickido
+Productivity web app built on Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+__Stickido__ lets you organize ideas and tasks by:
 
-Things you may want to cover:
+* Creating 'sticki notes' for any ideas or thoughts
+* Creating tasks with due dates
+* Seeing a visual representation of due dates on a timeline
+* Sorting tasks by clicking on due dates 
 
-* Ruby version
+**Gems/Frameworks used:** Devise, Faker, Bootstrap, Gridstack, Sly 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# stickido
+## Example
+![alt text](example/stickido.gif "Stickido example")
