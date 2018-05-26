@@ -1,31 +1,31 @@
 
   <%@page_location = "landing"%>
-  
-<div id="landing-page-sign-in-wrap">
-   
+
+<div class="d-flex justify-content-center align-items-center" style="height: 500px;" id="landing-page-sign-in-wrap">
+  <div>
       <h1 id="landing-page-title" class="stickido">Stickido</h1>
 
-     
+
       <% if user_signed_in? %>
 
-          <p class="tagline-two">Let's make a project</p>
-          <a class="tagline-two-link" href="/projects" data-turbolinks="false">let's do a project!</a>
+          <p class="tagline-two text-center">Let's make a project</p>
+          <a class="tagline-two-link text-center" href="/projects" data-turbolinks="false">let's do a project!</a>
       <%else%>
-        <p class="tagline-one">You dan "sticki" do it !</p>
+        <p class="tagline-one text-center">You dan "sticki" do it !</p>
       <%end%>
-          
+
 
       <% if user_signed_in? %>
 
         <%# link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-primary") %>
 
       <% else %>
-        <div id="sign-in-buttons-wrap">
+        <div class="" id="sign-in-buttons-wrap">
           <!-- <a class="" href="users/sign_up" role="button">join</a> -->
           <%= link_to('lets organize', new_user_session_path, class: "") %>
         </div>
       <% end %>
-    
+    </div>
    </div>
 
 
