@@ -13,6 +13,7 @@ __Stickido__ lets you organize ideas and tasks by:
 
 Demo Login
 Email: Admin@example.com
+
 Password: 123456
 
 ## Example
