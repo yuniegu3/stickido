@@ -88,3 +88,8 @@
   font-size: 2.5rem;
   text-align: center;
 }
+
+
+#myModal {
+  z-index: 1500;
+}
