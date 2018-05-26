@@ -35,16 +35,31 @@
         <div class="card-header">
           Subtasks
         </div>
+
       <%@parent_id_one = task.id%>
       <%@subtasks_one = Task.where(task_id: @parent_id_one)%>
       <%if @subtasks_one != nil%>
         <%@subtasks_one.each do |t|%>
-        <li class="list-group-item"><%= t.name %></li>
+        <li class="list-group-item list-group-item-action flex-column align-items-center">
+          <div class="d-flex w-100 justify-content-between">
+
+          <h6 class="mb-1"><%= t.name %></h6>      
+        </div>
+      <p class="mb-1"> 
+        <%= t.content %>
+      </p>
+      <span><%= link_to 'Edit', edit_project_task_path(params[:project_id], t), class: "btn", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], t), method: :delete, class: "btn", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
+          
+        </span>
+
+
+      </li>
         <% end %>
       <% end %>
       </ul>
-      <a href="#" class="card-link">Edit</a>
-      <a href="#" class="card-link">Delete</a>
+      <%= link_to 'Edit', edit_project_task_path(params[:project_id], task), class: "card-link btn btn-outline-primary", remote: true %>
+        <%= link_to 'Delete', project_task_path(params[:project_id], task), method: :delete, class: "card-link btn btn-outline-danger", data: { confirm: "Are you sure you want to delete '#{task.name}'?" } %>
     </div>
   </div>
   <% end %>
@@ -132,3 +147,4 @@ $('.showalltasks').click(function(){
   $('.listFrameContainer').show();
 })
 </script>
+
